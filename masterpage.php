@@ -9,18 +9,15 @@
 <body>
 	<section id="header" > 
 		<p>header goes here !!! </p>
-		<p>header goes here !!! </p>
-		<p>header goes here !!! </p>
-		<p>header goes here !!! </p>
+
 	</section>
 	<section id="mainMenu" > 
 		<p>menu goes here !!! </p>
-		<p>menu goes here !!! </p>
+
 	</section>
 	<section id="topAds" > 
 		<p>Top Ads go here !!! </p>
-		<p>Top Ads go here !!! </p>
-		<p>Top Ads go here !!! </p>
+
 	
 	</section>
 	<section id="mainContent" > 
