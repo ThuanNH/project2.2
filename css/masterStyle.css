@@ -40,12 +40,12 @@ body,a,p,div,section,span,ul,li{
 #leftContent{
 	background:red;
 	float:left;
-	width:49.5%;
+	width:66%;
 }
 #rightContent{
 	background:green;
 	float:right;
-	width:49.5%;
+	width:32%;
 }
 #slideshowBox{
 	width:100%;
