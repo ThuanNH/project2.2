@@ -1,0 +1,117 @@
+body,a,p,div,section,span,ul,li{
+	margin:0px;
+	padding:0px;
+}
+/*  Header layout */
+#header{
+	background:green;
+	width:100%;
+	margin-top:10px;
+}
+
+/*  End Header layout */
+
+/*  Menu layout */
+#mainMenu{
+	background:orange;
+	width:100%;
+	margin-top:10px;
+}
+
+/* End Menu layout */
+
+
+/*  Top Advertising layout */
+#topAds{
+	background:lavender;
+	width:100%;
+	margin-top:10px;
+}
+/*  End Top Advertising layout */
+
+
+
+/*  Main Content layout */
+#mainContent{
+	background:yellow;
+	width:1000px;
+	margin:10px auto 0px auto;
+}
+#leftContent{
+	background:red;
+	float:left;
+	width:49.5%;
+}
+#rightContent{
+	background:green;
+	float:right;
+	width:49.5%;
+}
+#slideshowBox{
+	width:100%;
+	float:left;
+	background:orange;
+}
+
+#playlistBox{
+	width:100%;
+	float:left;
+	background:lavender;
+	margin-top:10px;
+}
+#ColsVideoBox{
+	width:100%;
+	float:left;
+	background:green;
+	margin-top:10px;
+}
+#videoBox{
+	width:100%;
+	float:left;
+	background:orange;
+	margin-top:10px;
+}
+#songBox{
+	width:100%;
+	float:left;
+	background:orange;
+	margin-top:10px;
+}
+#sideAds{
+	width:100%;
+	float:left;
+	background:orange;
+
+}
+
+#sideMusicBox{
+	width:100%;
+	float:left;
+	background:orange;
+	margin-top:10px;
+}
+
+#sideHotTopicBox{
+	width:100%;
+	float:left;
+	background:orange;
+	margin-top:10px;
+}
+#sideSingerBox{
+	width:100%;
+	float:left;
+	background:orange;
+	margin-top:10px;
+}
+/* End Main Content layout */
+
+
+/*  Footer layout */
+
+#footer{
+	width:100%;
+	background:gray;
+	margin-top:10px;
+}
+
+/*  End Footer layout */
