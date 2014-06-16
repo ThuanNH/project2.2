@@ -25,6 +25,7 @@
 		
 			<section id="slideshowBox" > 
 				<p>The slideshow goes here !!! </p>
+				<p>The slideshow goes here !!! </p>
 			</section>
 			<section id="playlistBox" > 
 				<p>The playlist box goes here !!! </p>
