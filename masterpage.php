@@ -1,6 +1,10 @@
 <head>
-
+	<script src="js/jquery2.1.js"></script>
+	<script src="js/mainJs.js"></script>
 	<link href="css/masterStyle.css" rel="stylesheet" type="text/css" />
+	<script>
+
+	</script>
 </head>
 <body>
 	<section id="header" > 
