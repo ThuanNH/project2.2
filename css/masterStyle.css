@@ -2,6 +2,9 @@ body,a,p,div,section,span,ul,li{
 	margin:0px;
 	padding:0px;
 }
+.clearBox{
+	clear:both;
+}
 /*  Header layout */
 #header{
 	background:green;

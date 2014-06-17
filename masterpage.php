@@ -39,7 +39,7 @@
 			<section id="songBox" > 
 				<p>The song box goes here !!! </p>
 			</section>
-			<div style="clear:both"></div>
+			<div class="clearBox"></div>
 		</section>
 		<section id="rightContent" > 
 		
@@ -55,9 +55,9 @@
 			<section id="sideSingerBox" > 
 				<p>The singer box goes here !!! </p>
 			</section>
-			<div style="clear:both"></div>
+			<div class="clearBox"></div>
 		</section>
-		<div style="clear:both"></div>
+		<div class="clearBox"></div>
 	</section>
 	<section id="footer" > <p>footer goes here !!! </p> </section>
 </body>
