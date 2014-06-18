@@ -9,7 +9,10 @@
 <body>
 	<section id="header" > 
 		<p>header goes here !!! </p>
-
+		<p>header goes here !!! </p>
+		<p>header goes here !!! </p>
+		<p>header goes here !!! </p>
+		<p>header goes here !!! </p>
 	</section>
 	<section id="mainMenu" > 
 		<p>menu goes here !!! </p>
