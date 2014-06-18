@@ -61,7 +61,7 @@ $(document).ready(function()
 <ul id="menuTop" class="notifi">
     <li id="icon_menu_logo" class="icon_logo_menu hide"></li>
 	<li id="icon_menu_home" class="active">
-	<a href="DeTai.php"><img src="css/images/home.jpg"></a></li>
+	<a href="DeTai.php"><img src="images/home.jpg"></a></li>
 	<li class="">Bài hát</li>
 	<li class="">Playist</li>
 	<li class="">Video</li>
@@ -74,7 +74,7 @@ $(document).ready(function()
 	</section>
 	<section id="topAds" > 
 		<div >
-<embed   class="posi" src="css/images/clip.swf" wmode="transparent">
+<embed   class="posi" src="images/clip.swf" wmode="transparent">
 </embed></div>
 
 
@@ -87,24 +87,24 @@ $(document).ready(function()
 				<div class="center">
 <div class="left">
 <div class="slideshow" >
-	<div><a href="#"><img src="css/images/show1.jpg" alt="" border="0" /></a></div>
-	<div><a href="#"><img src="css/images/show2.jpg" alt="" border="0" /></a></div>
-	<div><a href="#"><img src="css/images/show3.jpg" alt="" border="0" /></a></div>
-	<div><a href="#"><img src="css/images/show4.jpg" alt="" border="0" /></a></div>
+	<div><a href="#"><img src="images/show1.jpg" alt="" border="0" /></a></div>
+	<div><a href="#"><img src="images/show2.jpg" alt="" border="0" /></a></div>
+	<div><a href="#"><img src="images/show3.jpg" alt="" border="0" /></a></div>
+	<div><a href="#"><img src="images/show4.jpg" alt="" border="0" /></a></div>
 </div>
 <div class="show">
 <ul id="anh">
 <li rel="1"	 class="active"> 
-<img alt="" src="css/images/show1.jpg" width="138px" height="100px"></img>
+<img alt="" src="images/show1.jpg" width="138px" height="100px"></img>
 </li>
 <li rel="2" > 
-<img alt="" src="css/images/show2.jpg" width="138px" height="100px"></img>
+<img alt="" src="images/show2.jpg" width="138px" height="100px"></img>
 </li>
 <li rel="3"> 
-<img alt="" src="css/images/show3.jpg" width="138px" height="100px"/>
+<img alt="" src="images/show3.jpg" width="138px" height="100px"/>
 </li>
 <li rel="4"> 
-<img alt="" src="css/images/show4.jpg" width="138px" height="100px"/>
+<img alt="" src="images/show4.jpg" width="138px" height="100px"/>
 </li>
 </ul>
 </div></div>
@@ -128,14 +128,14 @@ $(document).ready(function()
 			<section id="sideAds" > 
 				<div class="right">
 <div >
-<embed   class="posi1" src="css/images/clip3.swf" wmode="transparent">
+<embed   class="posi1" src="images/clip3.swf" wmode="transparent">
 </embed></div>
 </br>
 			</section>
 			<section id="sideMusicBox" > 
 				<div class="green">
 <label> Bảng xếp hạng</label>
-<img src="css/images/play.jpg"/> 
+<img src="images/play.jpg"/> 
 <select class="right">
 <option >Việt Nam</option>
 <option >Châu Á</option>
@@ -144,7 +144,7 @@ $(document).ready(function()
  <div >
  <div class="one"> 1</div>
  <div >
- <a class="one2"> Yêu em là Định Mệnh</a><a class="one3" ><img src="css/images/listen.jpg"/>1231313</a>
+ <a class="one2"> Yêu em là Định Mệnh</a><a class="one3" ><img src="images/listen.jpg"/>1231313</a>
  </br>
  <a class="one4"> Cao Thái Sơn</a>
  </div>
@@ -155,7 +155,7 @@ $(document).ready(function()
  <div class="chude">
  Chủ đề hot
  </div>
-<div><img src="css/images/chude1.jpg"/>
+<div><img src="images/chude1.jpg"/>
 </br>
 <a href="#" class="style-none">Nhạc tuyển tập</a>
 </br>
@@ -164,7 +164,7 @@ Xin hân hạnh gửi đến các bạn</br> những tuyển tập các ca khúc
  website</br> NhacCuaTui.Com. Mời các</br> bạn cùng lắng nghe và chia sẻ</br><a href="#" class="style-none">Xem Thêm</a>
 	</div>
 	</br>
-	<div><img src="css/images/chude2.jpg"/>
+	<div><img src="images/chude2.jpg"/>
 	</br>
 <a href="#" class="style-none">Nhạc trữ tình chọn lọc</a>
 </br>
@@ -185,10 +185,10 @@ Tuyển tập nhạc trữ tình tuyển</br> chọn những playlist nhạc tr�
 	</div>
 	<ul>
 	<li >
-	<img src="css/images/lbh.jpg"/>
+	<img src="images/lbh.jpg"/>
 	<a> Lương Bích Hữu</a>
 	</li>
-	<img src="css/images/hqh.jpg"/>
+	<img src="images/hqh.jpg"/>
 	<a> Hồ Quang Hiếu</a>
 	</ul>
 </div>
