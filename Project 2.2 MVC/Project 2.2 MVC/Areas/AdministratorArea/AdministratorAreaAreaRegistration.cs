@@ -17,7 +17,7 @@ namespace Project_2._2_MVC.Areas.AdministratorArea
             context.MapRoute(
                 "AdministratorArea_default",
                 "AdministratorArea/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new {controller = "Index", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
