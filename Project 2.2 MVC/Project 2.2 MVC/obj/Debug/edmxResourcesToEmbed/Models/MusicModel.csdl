@@ -1,0 +1,1053 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MusicWeb_DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MusicWeb_DBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Account" EntityType="MusicWeb_DBModel.Account" />
+    <EntitySet Name="accounttype" EntityType="MusicWeb_DBModel.accounttype" />
+    <EntitySet Name="ads" EntityType="MusicWeb_DBModel.ads" />
+    <EntitySet Name="bannedreason" EntityType="MusicWeb_DBModel.bannedreason" />
+    <EntitySet Name="category" EntityType="MusicWeb_DBModel.category" />
+    <EntitySet Name="categorytype" EntityType="MusicWeb_DBModel.categorytype" />
+    <EntitySet Name="comments" EntityType="MusicWeb_DBModel.comments" />
+    <EntitySet Name="favoriteplaylist" EntityType="MusicWeb_DBModel.favoriteplaylist" />
+    <EntitySet Name="favoritesong" EntityType="MusicWeb_DBModel.favoritesong" />
+    <EntitySet Name="favoritevideo" EntityType="MusicWeb_DBModel.favoritevideo" />
+    <EntitySet Name="musician" EntityType="MusicWeb_DBModel.musician" />
+    <EntitySet Name="playlist" EntityType="MusicWeb_DBModel.playlist" />
+    <EntitySet Name="playlistcategory" EntityType="MusicWeb_DBModel.playlistcategory" />
+    <EntitySet Name="playlistcomments" EntityType="MusicWeb_DBModel.playlistcomments" />
+    <EntitySet Name="playlistitem" EntityType="MusicWeb_DBModel.playlistitem" />
+    <EntitySet Name="singer" EntityType="MusicWeb_DBModel.singer" />
+    <EntitySet Name="singercategory" EntityType="MusicWeb_DBModel.singercategory" />
+    <EntitySet Name="slideshowitem" EntityType="MusicWeb_DBModel.slideshowitem" />
+    <EntitySet Name="song" EntityType="MusicWeb_DBModel.song" />
+    <EntitySet Name="songcategory" EntityType="MusicWeb_DBModel.songcategory" />
+    <EntitySet Name="songcomments" EntityType="MusicWeb_DBModel.songcomments" />
+    <EntitySet Name="songlike" EntityType="MusicWeb_DBModel.songlike" />
+    <EntitySet Name="songmusician" EntityType="MusicWeb_DBModel.songmusician" />
+    <EntitySet Name="songsinger" EntityType="MusicWeb_DBModel.songsinger" />
+    <EntitySet Name="sysdiagrams" EntityType="MusicWeb_DBModel.sysdiagrams" />
+    <EntitySet Name="userreport" EntityType="MusicWeb_DBModel.userreport" />
+    <EntitySet Name="video" EntityType="MusicWeb_DBModel.video" />
+    <EntitySet Name="videocategory" EntityType="MusicWeb_DBModel.videocategory" />
+    <EntitySet Name="videocomments" EntityType="MusicWeb_DBModel.videocomments" />
+    <EntitySet Name="videolike" EntityType="MusicWeb_DBModel.videolike" />
+    <AssociationSet Name="FK_Account" Association="MusicWeb_DBModel.FK_Account">
+      <End Role="accounttype" EntitySet="accounttype" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comments" Association="MusicWeb_DBModel.FK_comments">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="comments" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_favirotevideo" Association="MusicWeb_DBModel.FK_favirotevideo">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="favoritevideo" EntitySet="favoritevideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_favoriteplaylist" Association="MusicWeb_DBModel.FK_favoriteplaylist">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="favoriteplaylist" EntitySet="favoriteplaylist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_favoritesong1" Association="MusicWeb_DBModel.FK_favoritesong1">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="favoritesong" EntitySet="favoritesong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_playlist" Association="MusicWeb_DBModel.FK_playlist">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="playlist" EntitySet="playlist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songlike1" Association="MusicWeb_DBModel.FK_songlike1">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="songlike" EntitySet="songlike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userreport" Association="MusicWeb_DBModel.FK_userreport">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="userreport" EntitySet="userreport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_videolike1" Association="MusicWeb_DBModel.FK_videolike1">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="videolike" EntitySet="videolike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_category" Association="MusicWeb_DBModel.FK_category">
+      <End Role="categorytype" EntitySet="categorytype" />
+      <End Role="category" EntitySet="category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_playlistcategory" Association="MusicWeb_DBModel.FK_playlistcategory">
+      <End Role="category" EntitySet="category" />
+      <End Role="playlistcategory" EntitySet="playlistcategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_singercategory1" Association="MusicWeb_DBModel.FK_singercategory1">
+      <End Role="category" EntitySet="category" />
+      <End Role="singercategory" EntitySet="singercategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songcategory1" Association="MusicWeb_DBModel.FK_songcategory1">
+      <End Role="category" EntitySet="category" />
+      <End Role="songcategory" EntitySet="songcategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_videocategory" Association="MusicWeb_DBModel.FK_videocategory">
+      <End Role="category" EntitySet="category" />
+      <End Role="videocategory" EntitySet="videocategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_playlistcomments1" Association="MusicWeb_DBModel.FK_playlistcomments1">
+      <End Role="comments" EntitySet="comments" />
+      <End Role="playlistcomments" EntitySet="playlistcomments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songcomments1" Association="MusicWeb_DBModel.FK_songcomments1">
+      <End Role="comments" EntitySet="comments" />
+      <End Role="songcomments" EntitySet="songcomments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_videocomments1" Association="MusicWeb_DBModel.FK_videocomments1">
+      <End Role="comments" EntitySet="comments" />
+      <End Role="videocomments" EntitySet="videocomments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_favoriteplaylist1" Association="MusicWeb_DBModel.FK_favoriteplaylist1">
+      <End Role="playlist" EntitySet="playlist" />
+      <End Role="favoriteplaylist" EntitySet="favoriteplaylist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_favoritesong" Association="MusicWeb_DBModel.FK_favoritesong">
+      <End Role="song" EntitySet="song" />
+      <End Role="favoritesong" EntitySet="favoritesong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_favirotevideo1" Association="MusicWeb_DBModel.FK_favirotevideo1">
+      <End Role="video" EntitySet="video" />
+      <End Role="favoritevideo" EntitySet="favoritevideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songmusician" Association="MusicWeb_DBModel.FK_songmusician">
+      <End Role="musician" EntitySet="musician" />
+      <End Role="songmusician" EntitySet="songmusician" />
+    </AssociationSet>
+    <AssociationSet Name="FK_playlistcategory1" Association="MusicWeb_DBModel.FK_playlistcategory1">
+      <End Role="playlist" EntitySet="playlist" />
+      <End Role="playlistcategory" EntitySet="playlistcategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_playlistcomments" Association="MusicWeb_DBModel.FK_playlistcomments">
+      <End Role="playlist" EntitySet="playlist" />
+      <End Role="playlistcomments" EntitySet="playlistcomments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_playlistitem1" Association="MusicWeb_DBModel.FK_playlistitem1">
+      <End Role="playlist" EntitySet="playlist" />
+      <End Role="playlistitem" EntitySet="playlistitem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_playlistitem" Association="MusicWeb_DBModel.FK_playlistitem">
+      <End Role="song" EntitySet="song" />
+      <End Role="playlistitem" EntitySet="playlistitem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_singercategory" Association="MusicWeb_DBModel.FK_singercategory">
+      <End Role="singer" EntitySet="singer" />
+      <End Role="singercategory" EntitySet="singercategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songsinger1" Association="MusicWeb_DBModel.FK_songsinger1">
+      <End Role="singer" EntitySet="singer" />
+      <End Role="songsinger" EntitySet="songsinger" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songcategory" Association="MusicWeb_DBModel.FK_songcategory">
+      <End Role="song" EntitySet="song" />
+      <End Role="songcategory" EntitySet="songcategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songcomments" Association="MusicWeb_DBModel.FK_songcomments">
+      <End Role="song" EntitySet="song" />
+      <End Role="songcomments" EntitySet="songcomments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songlike" Association="MusicWeb_DBModel.FK_songlike">
+      <End Role="song" EntitySet="song" />
+      <End Role="songlike" EntitySet="songlike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songmusician1" Association="MusicWeb_DBModel.FK_songmusician1">
+      <End Role="song" EntitySet="song" />
+      <End Role="songmusician" EntitySet="songmusician" />
+    </AssociationSet>
+    <AssociationSet Name="FK_songsinger" Association="MusicWeb_DBModel.FK_songsinger">
+      <End Role="song" EntitySet="song" />
+      <End Role="songsinger" EntitySet="songsinger" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userreport2" Association="MusicWeb_DBModel.FK_userreport2">
+      <End Role="song" EntitySet="song" />
+      <End Role="userreport" EntitySet="userreport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userreport1" Association="MusicWeb_DBModel.FK_userreport1">
+      <End Role="video" EntitySet="video" />
+      <End Role="userreport" EntitySet="userreport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_videocategory1" Association="MusicWeb_DBModel.FK_videocategory1">
+      <End Role="video" EntitySet="video" />
+      <End Role="videocategory" EntitySet="videocategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_videocomments" Association="MusicWeb_DBModel.FK_videocomments">
+      <End Role="video" EntitySet="video" />
+      <End Role="videocomments" EntitySet="videocomments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_videolike" Association="MusicWeb_DBModel.FK_videolike">
+      <End Role="video" EntitySet="video" />
+      <End Role="videolike" EntitySet="videolike" />
+    </AssociationSet>
+    <AssociationSet Name="bannedaccount" Association="MusicWeb_DBModel.bannedaccount">
+      <End Role="bannedreason" EntitySet="bannedreason" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MusicWeb_DBModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MusicWeb_DBModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Accountname" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+    <Property Name="accounttypeid" Type="Int32" Nullable="false" />
+    <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="dob" Type="DateTime" Precision="3" />
+    <Property Name="avatar" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="moreinfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Isactive" Type="Boolean" Nullable="false" />
+    <Property Name="lastloggedin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="datecreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="accounttype" Relationship="MusicWeb_DBModel.FK_Account" FromRole="Account" ToRole="accounttype" />
+    <NavigationProperty Name="comments" Relationship="MusicWeb_DBModel.FK_comments" FromRole="Account" ToRole="comments" />
+    <NavigationProperty Name="favoritevideo" Relationship="MusicWeb_DBModel.FK_favirotevideo" FromRole="Account" ToRole="favoritevideo" />
+    <NavigationProperty Name="favoriteplaylist" Relationship="MusicWeb_DBModel.FK_favoriteplaylist" FromRole="Account" ToRole="favoriteplaylist" />
+    <NavigationProperty Name="favoritesong" Relationship="MusicWeb_DBModel.FK_favoritesong1" FromRole="Account" ToRole="favoritesong" />
+    <NavigationProperty Name="playlist" Relationship="MusicWeb_DBModel.FK_playlist" FromRole="Account" ToRole="playlist" />
+    <NavigationProperty Name="songlike" Relationship="MusicWeb_DBModel.FK_songlike1" FromRole="Account" ToRole="songlike" />
+    <NavigationProperty Name="userreport" Relationship="MusicWeb_DBModel.FK_userreport" FromRole="Account" ToRole="userreport" />
+    <NavigationProperty Name="videolike" Relationship="MusicWeb_DBModel.FK_videolike1" FromRole="Account" ToRole="videolike" />
+    <NavigationProperty Name="bannedreason" Relationship="MusicWeb_DBModel.bannedaccount" FromRole="Account" ToRole="bannedreason" />
+  </EntityType>
+  <EntityType Name="accounttype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="descriptions" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_Account" FromRole="accounttype" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="ads">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="link" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="images" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Isactive" Type="Boolean" Nullable="false" />
+    <Property Name="Datecreate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="bannedreason">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="descriptions" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.bannedaccount" FromRole="bannedreason" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="categorytypeid" Type="Int32" Nullable="false" />
+    <Property Name="thumbnail" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="moreinfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="categorytype" Relationship="MusicWeb_DBModel.FK_category" FromRole="category" ToRole="categorytype" />
+    <NavigationProperty Name="playlistcategory" Relationship="MusicWeb_DBModel.FK_playlistcategory" FromRole="category" ToRole="playlistcategory" />
+    <NavigationProperty Name="singercategory" Relationship="MusicWeb_DBModel.FK_singercategory1" FromRole="category" ToRole="singercategory" />
+    <NavigationProperty Name="songcategory" Relationship="MusicWeb_DBModel.FK_songcategory1" FromRole="category" ToRole="songcategory" />
+    <NavigationProperty Name="videocategory" Relationship="MusicWeb_DBModel.FK_videocategory" FromRole="category" ToRole="videocategory" />
+  </EntityType>
+  <EntityType Name="categorytype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="moreinfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="category" Relationship="MusicWeb_DBModel.FK_category" FromRole="categorytype" ToRole="category" />
+  </EntityType>
+  <EntityType Name="comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="accountid" Type="Int32" Nullable="false" />
+    <Property Name="contents" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="datecreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_comments" FromRole="comments" ToRole="Account" />
+    <NavigationProperty Name="playlistcomments" Relationship="MusicWeb_DBModel.FK_playlistcomments1" FromRole="comments" ToRole="playlistcomments" />
+    <NavigationProperty Name="songcomments" Relationship="MusicWeb_DBModel.FK_songcomments1" FromRole="comments" ToRole="songcomments" />
+    <NavigationProperty Name="videocomments" Relationship="MusicWeb_DBModel.FK_videocomments1" FromRole="comments" ToRole="videocomments" />
+  </EntityType>
+  <EntityType Name="favoriteplaylist">
+    <Key>
+      <PropertyRef Name="playlistid" />
+      <PropertyRef Name="accountid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="playlistid" Type="Int32" Nullable="false" />
+    <Property Name="accountid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_favoriteplaylist" FromRole="favoriteplaylist" ToRole="Account" />
+    <NavigationProperty Name="playlist" Relationship="MusicWeb_DBModel.FK_favoriteplaylist1" FromRole="favoriteplaylist" ToRole="playlist" />
+  </EntityType>
+  <EntityType Name="favoritesong">
+    <Key>
+      <PropertyRef Name="songid" />
+      <PropertyRef Name="accountid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="songid" Type="Int32" Nullable="false" />
+    <Property Name="accountid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_favoritesong1" FromRole="favoritesong" ToRole="Account" />
+    <NavigationProperty Name="song" Relationship="MusicWeb_DBModel.FK_favoritesong" FromRole="favoritesong" ToRole="song" />
+  </EntityType>
+  <EntityType Name="favoritevideo">
+    <Key>
+      <PropertyRef Name="videoid" />
+      <PropertyRef Name="accountid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="videoid" Type="Int32" Nullable="false" />
+    <Property Name="accountid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_favirotevideo" FromRole="favoritevideo" ToRole="Account" />
+    <NavigationProperty Name="video" Relationship="MusicWeb_DBModel.FK_favirotevideo1" FromRole="favoritevideo" ToRole="video" />
+  </EntityType>
+  <EntityType Name="musician">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nickname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="dob" Type="DateTime" Precision="3" />
+    <Property Name="dod" Type="DateTime" Precision="3" />
+    <Property Name="moreinfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="thumbnail" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="datecreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="songmusician" Relationship="MusicWeb_DBModel.FK_songmusician" FromRole="musician" ToRole="songmusician" />
+  </EntityType>
+  <EntityType Name="playlist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="accountid" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="thumbnail" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="moreinfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="datecreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_playlist" FromRole="playlist" ToRole="Account" />
+    <NavigationProperty Name="favoriteplaylist" Relationship="MusicWeb_DBModel.FK_favoriteplaylist1" FromRole="playlist" ToRole="favoriteplaylist" />
+    <NavigationProperty Name="playlistcategory" Relationship="MusicWeb_DBModel.FK_playlistcategory1" FromRole="playlist" ToRole="playlistcategory" />
+    <NavigationProperty Name="playlistcomments" Relationship="MusicWeb_DBModel.FK_playlistcomments" FromRole="playlist" ToRole="playlistcomments" />
+    <NavigationProperty Name="playlistitem" Relationship="MusicWeb_DBModel.FK_playlistitem1" FromRole="playlist" ToRole="playlistitem" />
+  </EntityType>
+  <EntityType Name="playlistcategory">
+    <Key>
+      <PropertyRef Name="playlistid" />
+      <PropertyRef Name="categoryid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="playlistid" Type="Int32" Nullable="false" />
+    <Property Name="categoryid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="category" Relationship="MusicWeb_DBModel.FK_playlistcategory" FromRole="playlistcategory" ToRole="category" />
+    <NavigationProperty Name="playlist" Relationship="MusicWeb_DBModel.FK_playlistcategory1" FromRole="playlistcategory" ToRole="playlist" />
+  </EntityType>
+  <EntityType Name="playlistcomments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="playlistid" Type="Int32" Nullable="false" />
+    <Property Name="commentsid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="MusicWeb_DBModel.FK_playlistcomments1" FromRole="playlistcomments" ToRole="comments" />
+    <NavigationProperty Name="playlist" Relationship="MusicWeb_DBModel.FK_playlistcomments" FromRole="playlistcomments" ToRole="playlist" />
+  </EntityType>
+  <EntityType Name="playlistitem">
+    <Key>
+      <PropertyRef Name="songid" />
+      <PropertyRef Name="playlistid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="songid" Type="Int32" Nullable="false" />
+    <Property Name="playlistid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="playlist" Relationship="MusicWeb_DBModel.FK_playlistitem1" FromRole="playlistitem" ToRole="playlist" />
+    <NavigationProperty Name="song" Relationship="MusicWeb_DBModel.FK_playlistitem" FromRole="playlistitem" ToRole="song" />
+  </EntityType>
+  <EntityType Name="singer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nickname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="dob" Type="DateTime" Precision="3" />
+    <Property Name="dod" Type="DateTime" Precision="3" />
+    <Property Name="moreinfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="thumbnail" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="datecreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="singercategory" Relationship="MusicWeb_DBModel.FK_singercategory" FromRole="singer" ToRole="singercategory" />
+    <NavigationProperty Name="songsinger" Relationship="MusicWeb_DBModel.FK_songsinger1" FromRole="singer" ToRole="songsinger" />
+  </EntityType>
+  <EntityType Name="singercategory">
+    <Key>
+      <PropertyRef Name="singerid" />
+      <PropertyRef Name="categoryid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="singerid" Type="Int32" Nullable="false" />
+    <Property Name="categoryid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="category" Relationship="MusicWeb_DBModel.FK_singercategory1" FromRole="singercategory" ToRole="category" />
+    <NavigationProperty Name="singer" Relationship="MusicWeb_DBModel.FK_singercategory" FromRole="singercategory" ToRole="singer" />
+  </EntityType>
+  <EntityType Name="slideshowitem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="link" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="images" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Isactive" Type="Boolean" Nullable="false" />
+    <Property Name="Datecreate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="song">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="duration" Type="Int32" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="moreinfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="lyricfile" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="lyric" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="datecreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="favoritesong" Relationship="MusicWeb_DBModel.FK_favoritesong" FromRole="song" ToRole="favoritesong" />
+    <NavigationProperty Name="playlistitem" Relationship="MusicWeb_DBModel.FK_playlistitem" FromRole="song" ToRole="playlistitem" />
+    <NavigationProperty Name="songcategory" Relationship="MusicWeb_DBModel.FK_songcategory" FromRole="song" ToRole="songcategory" />
+    <NavigationProperty Name="songcomments" Relationship="MusicWeb_DBModel.FK_songcomments" FromRole="song" ToRole="songcomments" />
+    <NavigationProperty Name="songlike" Relationship="MusicWeb_DBModel.FK_songlike" FromRole="song" ToRole="songlike" />
+    <NavigationProperty Name="songmusician" Relationship="MusicWeb_DBModel.FK_songmusician1" FromRole="song" ToRole="songmusician" />
+    <NavigationProperty Name="songsinger" Relationship="MusicWeb_DBModel.FK_songsinger" FromRole="song" ToRole="songsinger" />
+    <NavigationProperty Name="userreport" Relationship="MusicWeb_DBModel.FK_userreport2" FromRole="song" ToRole="userreport" />
+  </EntityType>
+  <EntityType Name="songcategory">
+    <Key>
+      <PropertyRef Name="songid" />
+      <PropertyRef Name="categoryid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="songid" Type="Int32" Nullable="false" />
+    <Property Name="categoryid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="category" Relationship="MusicWeb_DBModel.FK_songcategory1" FromRole="songcategory" ToRole="category" />
+    <NavigationProperty Name="song" Relationship="MusicWeb_DBModel.FK_songcategory" FromRole="songcategory" ToRole="song" />
+  </EntityType>
+  <EntityType Name="songcomments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="songid" Type="Int32" Nullable="false" />
+    <Property Name="commentsid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="MusicWeb_DBModel.FK_songcomments1" FromRole="songcomments" ToRole="comments" />
+    <NavigationProperty Name="song" Relationship="MusicWeb_DBModel.FK_songcomments" FromRole="songcomments" ToRole="song" />
+  </EntityType>
+  <EntityType Name="songlike">
+    <Key>
+      <PropertyRef Name="songid" />
+      <PropertyRef Name="accountid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="songid" Type="Int32" Nullable="false" />
+    <Property Name="accountid" Type="Int32" Nullable="false" />
+    <Property Name="dateadded" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_songlike1" FromRole="songlike" ToRole="Account" />
+    <NavigationProperty Name="song" Relationship="MusicWeb_DBModel.FK_songlike" FromRole="songlike" ToRole="song" />
+  </EntityType>
+  <EntityType Name="songmusician">
+    <Key>
+      <PropertyRef Name="musicianid" />
+      <PropertyRef Name="songid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="musicianid" Type="Int32" Nullable="false" />
+    <Property Name="songid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="musician" Relationship="MusicWeb_DBModel.FK_songmusician" FromRole="songmusician" ToRole="musician" />
+    <NavigationProperty Name="song" Relationship="MusicWeb_DBModel.FK_songmusician1" FromRole="songmusician" ToRole="song" />
+  </EntityType>
+  <EntityType Name="songsinger">
+    <Key>
+      <PropertyRef Name="singerid" />
+      <PropertyRef Name="songid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="singerid" Type="Int32" Nullable="false" />
+    <Property Name="songid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="singer" Relationship="MusicWeb_DBModel.FK_songsinger1" FromRole="songsinger" ToRole="singer" />
+    <NavigationProperty Name="song" Relationship="MusicWeb_DBModel.FK_songsinger" FromRole="songsinger" ToRole="song" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="userreport">
+    <Key>
+      <PropertyRef Name="accountid" />
+      <PropertyRef Name="relatedvideoid" />
+      <PropertyRef Name="relatedsongid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="accountid" Type="Int32" Nullable="false" />
+    <Property Name="relatedvideoid" Type="Int32" Nullable="false" />
+    <Property Name="relatedsongid" Type="Int32" Nullable="false" />
+    <Property Name="relatedaccountid" Type="Int32" Nullable="false" />
+    <Property Name="moreinfo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Dateadded" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_userreport" FromRole="userreport" ToRole="Account" />
+    <NavigationProperty Name="song" Relationship="MusicWeb_DBModel.FK_userreport2" FromRole="userreport" ToRole="song" />
+    <NavigationProperty Name="video" Relationship="MusicWeb_DBModel.FK_userreport1" FromRole="userreport" ToRole="video" />
+  </EntityType>
+  <EntityType Name="video">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="duration" Type="Int32" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="thumbnail" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="moreinfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="datecreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="favoritevideo" Relationship="MusicWeb_DBModel.FK_favirotevideo1" FromRole="video" ToRole="favoritevideo" />
+    <NavigationProperty Name="userreport" Relationship="MusicWeb_DBModel.FK_userreport1" FromRole="video" ToRole="userreport" />
+    <NavigationProperty Name="videocategory" Relationship="MusicWeb_DBModel.FK_videocategory1" FromRole="video" ToRole="videocategory" />
+    <NavigationProperty Name="videocomments" Relationship="MusicWeb_DBModel.FK_videocomments" FromRole="video" ToRole="videocomments" />
+    <NavigationProperty Name="videolike" Relationship="MusicWeb_DBModel.FK_videolike" FromRole="video" ToRole="videolike" />
+  </EntityType>
+  <EntityType Name="videocategory">
+    <Key>
+      <PropertyRef Name="videoid" />
+      <PropertyRef Name="categoryid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="videoid" Type="Int32" Nullable="false" />
+    <Property Name="categoryid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="category" Relationship="MusicWeb_DBModel.FK_videocategory" FromRole="videocategory" ToRole="category" />
+    <NavigationProperty Name="video" Relationship="MusicWeb_DBModel.FK_videocategory1" FromRole="videocategory" ToRole="video" />
+  </EntityType>
+  <EntityType Name="videocomments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="videoid" Type="Int32" Nullable="false" />
+    <Property Name="commentsid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="MusicWeb_DBModel.FK_videocomments1" FromRole="videocomments" ToRole="comments" />
+    <NavigationProperty Name="video" Relationship="MusicWeb_DBModel.FK_videocomments" FromRole="videocomments" ToRole="video" />
+  </EntityType>
+  <EntityType Name="videolike">
+    <Key>
+      <PropertyRef Name="videoid" />
+      <PropertyRef Name="accountid" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="videoid" Type="Int32" Nullable="false" />
+    <Property Name="accountid" Type="Int32" Nullable="false" />
+    <Property Name="dateadded" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="MusicWeb_DBModel.FK_videolike1" FromRole="videolike" ToRole="Account" />
+    <NavigationProperty Name="video" Relationship="MusicWeb_DBModel.FK_videolike" FromRole="videolike" ToRole="video" />
+  </EntityType>
+  <Association Name="FK_Account">
+    <End Role="accounttype" Type="MusicWeb_DBModel.accounttype" Multiplicity="1" />
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accounttype">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="accounttypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comments">
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="1" />
+    <End Role="comments" Type="MusicWeb_DBModel.comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_favirotevideo">
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="1" />
+    <End Role="favoritevideo" Type="MusicWeb_DBModel.favoritevideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="favoritevideo">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_favoriteplaylist">
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="1" />
+    <End Role="favoriteplaylist" Type="MusicWeb_DBModel.favoriteplaylist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="favoriteplaylist">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_favoritesong1">
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="1" />
+    <End Role="favoritesong" Type="MusicWeb_DBModel.favoritesong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="favoritesong">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_playlist">
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="1" />
+    <End Role="playlist" Type="MusicWeb_DBModel.playlist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="playlist">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songlike1">
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="1" />
+    <End Role="songlike" Type="MusicWeb_DBModel.songlike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songlike">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userreport">
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="1" />
+    <End Role="userreport" Type="MusicWeb_DBModel.userreport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="userreport">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_videolike1">
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="1" />
+    <End Role="videolike" Type="MusicWeb_DBModel.videolike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="videolike">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_category">
+    <End Role="categorytype" Type="MusicWeb_DBModel.categorytype" Multiplicity="1" />
+    <End Role="category" Type="MusicWeb_DBModel.category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categorytype">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="category">
+        <PropertyRef Name="categorytypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_playlistcategory">
+    <End Role="category" Type="MusicWeb_DBModel.category" Multiplicity="1" />
+    <End Role="playlistcategory" Type="MusicWeb_DBModel.playlistcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="playlistcategory">
+        <PropertyRef Name="categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_singercategory1">
+    <End Role="category" Type="MusicWeb_DBModel.category" Multiplicity="1" />
+    <End Role="singercategory" Type="MusicWeb_DBModel.singercategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="singercategory">
+        <PropertyRef Name="categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songcategory1">
+    <End Role="category" Type="MusicWeb_DBModel.category" Multiplicity="1" />
+    <End Role="songcategory" Type="MusicWeb_DBModel.songcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songcategory">
+        <PropertyRef Name="categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_videocategory">
+    <End Role="category" Type="MusicWeb_DBModel.category" Multiplicity="1" />
+    <End Role="videocategory" Type="MusicWeb_DBModel.videocategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="videocategory">
+        <PropertyRef Name="categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_playlistcomments1">
+    <End Role="comments" Type="MusicWeb_DBModel.comments" Multiplicity="1" />
+    <End Role="playlistcomments" Type="MusicWeb_DBModel.playlistcomments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="playlistcomments">
+        <PropertyRef Name="commentsid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songcomments1">
+    <End Role="comments" Type="MusicWeb_DBModel.comments" Multiplicity="1" />
+    <End Role="songcomments" Type="MusicWeb_DBModel.songcomments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songcomments">
+        <PropertyRef Name="commentsid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_videocomments1">
+    <End Role="comments" Type="MusicWeb_DBModel.comments" Multiplicity="1" />
+    <End Role="videocomments" Type="MusicWeb_DBModel.videocomments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="videocomments">
+        <PropertyRef Name="commentsid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_favoriteplaylist1">
+    <End Role="playlist" Type="MusicWeb_DBModel.playlist" Multiplicity="1" />
+    <End Role="favoriteplaylist" Type="MusicWeb_DBModel.favoriteplaylist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="playlist">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="favoriteplaylist">
+        <PropertyRef Name="playlistid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_favoritesong">
+    <End Role="song" Type="MusicWeb_DBModel.song" Multiplicity="1" />
+    <End Role="favoritesong" Type="MusicWeb_DBModel.favoritesong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="song">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="favoritesong">
+        <PropertyRef Name="songid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_favirotevideo1">
+    <End Role="video" Type="MusicWeb_DBModel.video" Multiplicity="1" />
+    <End Role="favoritevideo" Type="MusicWeb_DBModel.favoritevideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="video">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="favoritevideo">
+        <PropertyRef Name="videoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songmusician">
+    <End Role="musician" Type="MusicWeb_DBModel.musician" Multiplicity="1" />
+    <End Role="songmusician" Type="MusicWeb_DBModel.songmusician" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="musician">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songmusician">
+        <PropertyRef Name="musicianid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_playlistcategory1">
+    <End Role="playlist" Type="MusicWeb_DBModel.playlist" Multiplicity="1" />
+    <End Role="playlistcategory" Type="MusicWeb_DBModel.playlistcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="playlist">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="playlistcategory">
+        <PropertyRef Name="playlistid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_playlistcomments">
+    <End Role="playlist" Type="MusicWeb_DBModel.playlist" Multiplicity="1" />
+    <End Role="playlistcomments" Type="MusicWeb_DBModel.playlistcomments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="playlist">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="playlistcomments">
+        <PropertyRef Name="playlistid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_playlistitem1">
+    <End Role="playlist" Type="MusicWeb_DBModel.playlist" Multiplicity="1" />
+    <End Role="playlistitem" Type="MusicWeb_DBModel.playlistitem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="playlist">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="playlistitem">
+        <PropertyRef Name="playlistid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_playlistitem">
+    <End Role="song" Type="MusicWeb_DBModel.song" Multiplicity="1" />
+    <End Role="playlistitem" Type="MusicWeb_DBModel.playlistitem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="song">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="playlistitem">
+        <PropertyRef Name="songid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_singercategory">
+    <End Role="singer" Type="MusicWeb_DBModel.singer" Multiplicity="1" />
+    <End Role="singercategory" Type="MusicWeb_DBModel.singercategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="singer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="singercategory">
+        <PropertyRef Name="singerid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songsinger1">
+    <End Role="singer" Type="MusicWeb_DBModel.singer" Multiplicity="1" />
+    <End Role="songsinger" Type="MusicWeb_DBModel.songsinger" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="singer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songsinger">
+        <PropertyRef Name="singerid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songcategory">
+    <End Role="song" Type="MusicWeb_DBModel.song" Multiplicity="1" />
+    <End Role="songcategory" Type="MusicWeb_DBModel.songcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="song">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songcategory">
+        <PropertyRef Name="songid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songcomments">
+    <End Role="song" Type="MusicWeb_DBModel.song" Multiplicity="1" />
+    <End Role="songcomments" Type="MusicWeb_DBModel.songcomments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="song">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songcomments">
+        <PropertyRef Name="songid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songlike">
+    <End Role="song" Type="MusicWeb_DBModel.song" Multiplicity="1" />
+    <End Role="songlike" Type="MusicWeb_DBModel.songlike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="song">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songlike">
+        <PropertyRef Name="songid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songmusician1">
+    <End Role="song" Type="MusicWeb_DBModel.song" Multiplicity="1" />
+    <End Role="songmusician" Type="MusicWeb_DBModel.songmusician" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="song">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songmusician">
+        <PropertyRef Name="songid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_songsinger">
+    <End Role="song" Type="MusicWeb_DBModel.song" Multiplicity="1" />
+    <End Role="songsinger" Type="MusicWeb_DBModel.songsinger" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="song">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="songsinger">
+        <PropertyRef Name="songid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userreport2">
+    <End Role="song" Type="MusicWeb_DBModel.song" Multiplicity="1" />
+    <End Role="userreport" Type="MusicWeb_DBModel.userreport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="song">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="userreport">
+        <PropertyRef Name="relatedsongid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userreport1">
+    <End Role="video" Type="MusicWeb_DBModel.video" Multiplicity="1" />
+    <End Role="userreport" Type="MusicWeb_DBModel.userreport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="video">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="userreport">
+        <PropertyRef Name="relatedvideoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_videocategory1">
+    <End Role="video" Type="MusicWeb_DBModel.video" Multiplicity="1" />
+    <End Role="videocategory" Type="MusicWeb_DBModel.videocategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="video">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="videocategory">
+        <PropertyRef Name="videoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_videocomments">
+    <End Role="video" Type="MusicWeb_DBModel.video" Multiplicity="1" />
+    <End Role="videocomments" Type="MusicWeb_DBModel.videocomments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="video">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="videocomments">
+        <PropertyRef Name="videoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_videolike">
+    <End Role="video" Type="MusicWeb_DBModel.video" Multiplicity="1" />
+    <End Role="videolike" Type="MusicWeb_DBModel.videolike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="video">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="videolike">
+        <PropertyRef Name="videoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="bannedaccount">
+    <End Role="bannedreason" Type="MusicWeb_DBModel.bannedreason" Multiplicity="0..1" />
+    <End Role="Account" Type="MusicWeb_DBModel.Account" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
