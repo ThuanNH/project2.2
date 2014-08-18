@@ -120,7 +120,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\AdministratorArea\Controllers\HomeController.cs" />
     <Compile Include="Controllers\Default1Controller.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\Account.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
@@ -324,6 +326,7 @@
       <DependentUpon>MusicModel.edmx</DependentUpon>
       <LastGenOutput>MusicModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\AdministratorArea\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -357,6 +360,11 @@
     <Content Include="Views\Default1\Create.cshtml" />
     <Content Include="Views\Default1\Edit.cshtml" />
     <Content Include="Views\Default1\Delete.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

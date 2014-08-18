@@ -1,0 +1,13 @@
+﻿
+<h2>@ViewBag.Title</h2>
+
+
+
+<img src="@ViewBag.Title" />
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+<input type="file" name="file" id="img"/>
+<input type="submit" />
+}
