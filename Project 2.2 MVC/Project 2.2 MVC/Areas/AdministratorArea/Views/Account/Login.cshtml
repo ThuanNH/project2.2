@@ -1,0 +1,41 @@
+﻿@model Project_2._2_MVC.Models.Account
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/Admin/LoginStyle.css" rel="stylesheet" />
+</head>
+<body>
+    @*@if (Request.IsAuthenticated){
+        Response.Redirect(Url.Action("Index", "Home"));
+    }
+    else {  *@       
+        @using(Html.BeginForm()){
+          <h1> Đăng nhập </h1>
+          <div class="inset">
+          <p>@Html.ValidationSummary("", new { @style="color:red;"})</p><br />
+          <p>
+            <label for="email">Tài khoản</label>
+            @Html.TextBoxFor(m => m.Accountname)
+            @*@Html.ValidationMessage("Accountname")*@
+          </p>
+          <p>
+            <label for="password">Mật khẩu</label>
+            @Html.PasswordFor(m => m.password)
+            @*@Html.ValidationMessage("password")*@
+          </p>
+          </div>
+          <p class="p-container">
+            <span></span>
+            <input type="submit" name="go" id="go" value= "Đăng nhập">
+          </p>@*
+        }*@
+    }
+</body>
+</html>
