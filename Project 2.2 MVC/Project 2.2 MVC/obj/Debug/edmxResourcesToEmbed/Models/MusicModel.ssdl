@@ -26,8 +26,9 @@
     <EntitySet Name="songlike" EntityType="MusicWeb_DBModel.Store.songlike" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="songmusician" EntityType="MusicWeb_DBModel.Store.songmusician" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="songsinger" EntityType="MusicWeb_DBModel.Store.songsinger" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="sysdiagrams" EntityType="MusicWeb_DBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="userreport" EntityType="MusicWeb_DBModel.Store.userreport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="userreportAccount" EntityType="MusicWeb_DBModel.Store.userreportAccount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="userreportSong" EntityType="MusicWeb_DBModel.Store.userreportSong" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="userreportVideo" EntityType="MusicWeb_DBModel.Store.userreportVideo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="video" EntityType="MusicWeb_DBModel.Store.video" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="videocategory" EntityType="MusicWeb_DBModel.Store.videocategory" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="videocomments" EntityType="MusicWeb_DBModel.Store.videocomments" store:Type="Tables" Schema="dbo" />
@@ -152,17 +153,29 @@
       <End Role="singer" EntitySet="singer" />
       <End Role="songsinger" EntitySet="songsinger" />
     </AssociationSet>
-    <AssociationSet Name="FK_userreport" Association="MusicWeb_DBModel.Store.FK_userreport">
+    <AssociationSet Name="FK_userreportaccount" Association="MusicWeb_DBModel.Store.FK_userreportaccount">
       <End Role="Account" EntitySet="Account" />
-      <End Role="userreport" EntitySet="userreport" />
+      <End Role="userreportAccount" EntitySet="userreportAccount" />
     </AssociationSet>
-    <AssociationSet Name="FK_userreport1" Association="MusicWeb_DBModel.Store.FK_userreport1">
-      <End Role="video" EntitySet="video" />
-      <End Role="userreport" EntitySet="userreport" />
+    <AssociationSet Name="FK_userreportaccount1" Association="MusicWeb_DBModel.Store.FK_userreportaccount1">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="userreportAccount" EntitySet="userreportAccount" />
     </AssociationSet>
-    <AssociationSet Name="FK_userreport2" Association="MusicWeb_DBModel.Store.FK_userreport2">
+    <AssociationSet Name="FK_userreportsong" Association="MusicWeb_DBModel.Store.FK_userreportsong">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="userreportSong" EntitySet="userreportSong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userreportsong1" Association="MusicWeb_DBModel.Store.FK_userreportsong1">
       <End Role="song" EntitySet="song" />
-      <End Role="userreport" EntitySet="userreport" />
+      <End Role="userreportSong" EntitySet="userreportSong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userreportvideo" Association="MusicWeb_DBModel.Store.FK_userreportvideo">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="userreportVideo" EntitySet="userreportVideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userreportvideo1" Association="MusicWeb_DBModel.Store.FK_userreportvideo1">
+      <End Role="video" EntitySet="video" />
+      <End Role="userreportVideo" EntitySet="userreportVideo" />
     </AssociationSet>
     <AssociationSet Name="FK_videocategory" Association="MusicWeb_DBModel.Store.FK_videocategory">
       <End Role="category" EntitySet="category" />
@@ -204,7 +217,7 @@
     <Property Name="notes" Type="nvarchar(max)" />
     <Property Name="Isactive" Type="bit" Nullable="false" />
     <Property Name="lastloggedin" Type="datetime" Nullable="false" />
-    <Property Name="datecreated" Type="datetime" />
+    <Property Name="datecreated" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="accounttype">
     <Key>
@@ -228,6 +241,7 @@
     <Key>
       <PropertyRef Name="accountid" />
     </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="accountid" Type="int" Nullable="false" />
     <Property Name="bannedreasonid" Type="int" Nullable="false" />
   </EntityType>
@@ -246,7 +260,7 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="categorytypeid" Type="int" Nullable="false" />
-    <Property Name="thumbnail" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="thumbnail" Type="varchar" MaxLength="100" />
     <Property Name="moreinfo" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="categorytype">
@@ -264,7 +278,7 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="accountid" Type="int" Nullable="false" />
     <Property Name="contents" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="datecreated" Type="datetime" />
+    <Property Name="datecreated" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="favoriteplaylist">
     <Key>
@@ -303,8 +317,8 @@
     <Property Name="dob" Type="datetime" />
     <Property Name="dod" Type="datetime" />
     <Property Name="moreinfo" Type="nvarchar(max)" />
-    <Property Name="thumbnail" Type="varchar" Nullable="false" MaxLength="100" />
-    <Property Name="datecreated" Type="datetime" />
+    <Property Name="thumbnail" Type="varchar" MaxLength="100" />
+    <Property Name="datecreated" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="playlist">
     <Key>
@@ -313,10 +327,10 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="accountid" Type="int" Nullable="false" />
     <Property Name="title" Type="nvarchar" MaxLength="50" />
-    <Property Name="thumbnail" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="thumbnail" Type="varchar" MaxLength="100" />
     <Property Name="moreinfo" Type="nvarchar(max)" />
-    <Property Name="views" Type="int" />
-    <Property Name="datecreated" Type="datetime" />
+    <Property Name="views" Type="int" Nullable="false" />
+    <Property Name="datecreated" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="playlistcategory">
     <Key>
@@ -354,8 +368,8 @@
     <Property Name="dob" Type="datetime" />
     <Property Name="dod" Type="datetime" />
     <Property Name="moreinfo" Type="nvarchar(max)" />
-    <Property Name="thumbnail" Type="varchar" Nullable="false" MaxLength="100" />
-    <Property Name="datecreated" Type="datetime" />
+    <Property Name="thumbnail" Type="varchar" MaxLength="100" />
+    <Property Name="datecreated" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="singercategory">
     <Key>
@@ -374,7 +388,7 @@
     <Property Name="link" Type="varchar(max)" Nullable="false" />
     <Property Name="images" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="Isactive" Type="bit" Nullable="false" />
-    <Property Name="Datecreate" Type="datetime" />
+    <Property Name="Datecreate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="song">
     <Key>
@@ -382,11 +396,11 @@
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="duration" Type="int" />
-    <Property Name="views" Type="int" />
+    <Property Name="duration" Type="int" Nullable="false" />
+    <Property Name="views" Type="int" Nullable="false" />
     <Property Name="moreinfo" Type="nvarchar(max)" />
-    <Property Name="lyricfile" Type="varchar" Nullable="false" MaxLength="100" />
-    <Property Name="lyric" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lyricfile" Type="varchar" MaxLength="100" />
+    <Property Name="lyric" Type="nvarchar(max)" />
     <Property Name="datecreated" Type="datetime" />
   </EntityType>
   <EntityType Name="songcategory">
@@ -414,7 +428,7 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="songid" Type="int" Nullable="false" />
     <Property Name="accountid" Type="int" Nullable="false" />
-    <Property Name="dateadded" Type="datetime" />
+    <Property Name="dateadded" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="songmusician">
     <Key>
@@ -434,29 +448,38 @@
     <Property Name="singerid" Type="int" Nullable="false" />
     <Property Name="songid" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
-  <EntityType Name="userreport">
+  <EntityType Name="userreportAccount">
     <Key>
       <PropertyRef Name="accountid" />
-      <PropertyRef Name="relatedvideoid" />
+      <PropertyRef Name="relatedaccountid" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="accountid" Type="int" Nullable="false" />
+    <Property Name="relatedaccountid" Type="int" Nullable="false" />
+    <Property Name="moreinfo" Type="varchar(max)" Nullable="false" />
+    <Property Name="Dateadded" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="userreportSong">
+    <Key>
+      <PropertyRef Name="accountid" />
       <PropertyRef Name="relatedsongid" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="accountid" Type="int" Nullable="false" />
-    <Property Name="relatedvideoid" Type="int" Nullable="false" />
     <Property Name="relatedsongid" Type="int" Nullable="false" />
-    <Property Name="relatedaccountid" Type="int" Nullable="false" />
     <Property Name="moreinfo" Type="varchar(max)" Nullable="false" />
-    <Property Name="Dateadded" Type="datetime" />
+    <Property Name="Dateadded" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="userreportVideo">
+    <Key>
+      <PropertyRef Name="accountid" />
+      <PropertyRef Name="relatedvideoid" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="accountid" Type="int" Nullable="false" />
+    <Property Name="relatedvideoid" Type="int" Nullable="false" />
+    <Property Name="moreinfo" Type="varchar(max)" Nullable="false" />
+    <Property Name="Dateadded" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="video">
     <Key>
@@ -464,11 +487,11 @@
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="duration" Type="int" />
-    <Property Name="views" Type="int" />
-    <Property Name="thumbnail" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="duration" Type="int" Nullable="false" />
+    <Property Name="views" Type="int" Nullable="false" />
+    <Property Name="thumbnail" Type="varchar" MaxLength="100" />
     <Property Name="moreinfo" Type="nvarchar(max)" />
-    <Property Name="datecreated" Type="datetime" />
+    <Property Name="datecreated" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="videocategory">
     <Key>
@@ -495,7 +518,7 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="videoid" Type="int" Nullable="false" />
     <Property Name="accountid" Type="int" Nullable="false" />
-    <Property Name="dateadded" Type="datetime" />
+    <Property Name="dateadded" Type="datetime" Nullable="false" />
   </EntityType>
   <Association Name="FK_Account">
     <End Role="accounttype" Type="MusicWeb_DBModel.Store.accounttype" Multiplicity="1" />
@@ -857,39 +880,75 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_userreport">
+  <Association Name="FK_userreportaccount">
     <End Role="Account" Type="MusicWeb_DBModel.Store.Account" Multiplicity="1" />
-    <End Role="userreport" Type="MusicWeb_DBModel.Store.userreport" Multiplicity="*" />
+    <End Role="userreportAccount" Type="MusicWeb_DBModel.Store.userreportAccount" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Account">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="userreport">
+      <Dependent Role="userreportAccount">
         <PropertyRef Name="accountid" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_userreport1">
-    <End Role="video" Type="MusicWeb_DBModel.Store.video" Multiplicity="1" />
-    <End Role="userreport" Type="MusicWeb_DBModel.Store.userreport" Multiplicity="*" />
+  <Association Name="FK_userreportaccount1">
+    <End Role="Account" Type="MusicWeb_DBModel.Store.Account" Multiplicity="1" />
+    <End Role="userreportAccount" Type="MusicWeb_DBModel.Store.userreportAccount" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="video">
+      <Principal Role="Account">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="userreport">
-        <PropertyRef Name="relatedvideoid" />
+      <Dependent Role="userreportAccount">
+        <PropertyRef Name="relatedaccountid" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_userreport2">
+  <Association Name="FK_userreportsong">
+    <End Role="Account" Type="MusicWeb_DBModel.Store.Account" Multiplicity="1" />
+    <End Role="userreportSong" Type="MusicWeb_DBModel.Store.userreportSong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="userreportSong">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userreportsong1">
     <End Role="song" Type="MusicWeb_DBModel.Store.song" Multiplicity="1" />
-    <End Role="userreport" Type="MusicWeb_DBModel.Store.userreport" Multiplicity="*" />
+    <End Role="userreportSong" Type="MusicWeb_DBModel.Store.userreportSong" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="song">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="userreport">
+      <Dependent Role="userreportSong">
         <PropertyRef Name="relatedsongid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userreportvideo">
+    <End Role="Account" Type="MusicWeb_DBModel.Store.Account" Multiplicity="1" />
+    <End Role="userreportVideo" Type="MusicWeb_DBModel.Store.userreportVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="userreportVideo">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userreportvideo1">
+    <End Role="video" Type="MusicWeb_DBModel.Store.video" Multiplicity="1" />
+    <End Role="userreportVideo" Type="MusicWeb_DBModel.Store.userreportVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="video">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="userreportVideo">
+        <PropertyRef Name="relatedvideoid" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -965,35 +1024,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
 </Schema>

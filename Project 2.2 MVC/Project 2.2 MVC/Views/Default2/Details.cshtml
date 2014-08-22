@@ -1,0 +1,43 @@
+﻿@model Project_2._2_MVC.Models.category
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>category</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.categorytype.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categorytype.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.thumbnail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.thumbnail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.moreinfo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.moreinfo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -12,18 +12,15 @@ namespace Project_2._2_MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class userreport
+    public partial class userreportVideo
     {
         public int id { get; set; }
         public int accountid { get; set; }
         public int relatedvideoid { get; set; }
-        public int relatedsongid { get; set; }
-        public int relatedaccountid { get; set; }
         public string moreinfo { get; set; }
-        public Nullable<System.DateTime> Dateadded { get; set; }
+        public System.DateTime Dateadded { get; set; }
     
         public virtual Account Account { get; set; }
-        public virtual song song { get; set; }
         public virtual video video { get; set; }
     }
 }

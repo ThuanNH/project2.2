@@ -23,13 +23,13 @@ namespace Project_2._2_MVC.Models
             this.songlike = new HashSet<songlike>();
             this.songmusician = new HashSet<songmusician>();
             this.songsinger = new HashSet<songsinger>();
-            this.userreport = new HashSet<userreport>();
+            this.userreportSong = new HashSet<userreportSong>();
         }
     
         public int id { get; set; }
         public string title { get; set; }
-        public Nullable<int> duration { get; set; }
-        public Nullable<int> views { get; set; }
+        public int duration { get; set; }
+        public int views { get; set; }
         public string moreinfo { get; set; }
         public string lyricfile { get; set; }
         public string lyric { get; set; }
@@ -42,6 +42,6 @@ namespace Project_2._2_MVC.Models
         public virtual ICollection<songlike> songlike { get; set; }
         public virtual ICollection<songmusician> songmusician { get; set; }
         public virtual ICollection<songsinger> songsinger { get; set; }
-        public virtual ICollection<userreport> userreport { get; set; }
+        public virtual ICollection<userreportSong> userreportSong { get; set; }
     }
 }

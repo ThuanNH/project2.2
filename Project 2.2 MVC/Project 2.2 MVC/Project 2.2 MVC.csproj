@@ -123,7 +123,18 @@
     <Compile Include="Areas\AdministratorArea\Controllers\HomeController.cs" />
     <Compile Include="Areas\AdministratorArea\Controllers\AccountController.cs" />
     <Compile Include="Controllers\Default1Controller.cs" />
+    <Compile Include="Controllers\Default2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\AdministratorArea\AdministratorAreaAreaRegistration.cs" />
+    <Compile Include="constants.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Models\Account.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
@@ -133,11 +144,9 @@
     <Compile Include="Models\ads.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\AdministratorArea\AdministratorAreaAreaRegistration.cs" />
+    <Compile Include="Models\bannedaccount.cs">
+      <DependentUpon>MusicModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\bannedreason.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
@@ -150,8 +159,6 @@
     <Compile Include="Models\comments.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="constants.cs" />
-    <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Models\favoriteplaylist.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
@@ -160,9 +167,6 @@
     </Compile>
     <Compile Include="Models\favoritevideo.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\musician.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
@@ -194,7 +198,6 @@
     <Compile Include="Models\playlistitem.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\singer.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
@@ -222,19 +225,15 @@
     <Compile Include="Models\songsinger.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+    <Compile Include="Models\userreportAccount.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+    <Compile Include="Models\userreportSong.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
+    <Compile Include="Models\userreportVideo.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\userreport.cs">
-      <DependentUpon>MusicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="util.cs" />
     <Compile Include="Models\video.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
@@ -247,6 +246,8 @@
     <Compile Include="Models\videolike.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Admin\LoginStyle.css" />
@@ -310,6 +311,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Areas\AdministratorArea\Views\Web.config" />
+    <Content Include="Areas\AdministratorArea\Views\Shared\LayoutPageAdmin.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Home\Index.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Account\Login.cshtml" />
     <EntityDeploy Include="Models\MusicModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MusicModel.Designer.cs</LastGenOutput>
@@ -327,9 +331,6 @@
       <DependentUpon>MusicModel.edmx</DependentUpon>
       <LastGenOutput>MusicModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\AdministratorArea\Views\Shared\LayoutPageAdmin.cshtml" />
-    <Content Include="Areas\AdministratorArea\Views\Home\Index.cshtml" />
-    <Content Include="Areas\AdministratorArea\Views\Account\Login.cshtml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\Admin\hideshow.js" />
     <Content Include="Scripts\Admin\jquery-1.5.2.min.js" />
@@ -372,6 +373,11 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Default2\Index.cshtml" />
+    <Content Include="Views\Default2\Details.cshtml" />
+    <Content Include="Views\Default2\Create.cshtml" />
+    <Content Include="Views\Default2\Edit.cshtml" />
+    <Content Include="Views\Default2\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

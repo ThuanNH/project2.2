@@ -17,7 +17,7 @@ namespace Project_2._2_MVC.Models
         public int id { get; set; }
         public int videoid { get; set; }
         public int accountid { get; set; }
-        public Nullable<System.DateTime> dateadded { get; set; }
+        public System.DateTime dateadded { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual video video { get; set; }

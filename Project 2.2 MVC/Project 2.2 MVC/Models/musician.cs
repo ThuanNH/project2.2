@@ -26,7 +26,7 @@ namespace Project_2._2_MVC.Models
         public Nullable<System.DateTime> dod { get; set; }
         public string moreinfo { get; set; }
         public string thumbnail { get; set; }
-        public Nullable<System.DateTime> datecreated { get; set; }
+        public System.DateTime datecreated { get; set; }
     
         public virtual ICollection<songmusician> songmusician { get; set; }
     }

@@ -17,7 +17,7 @@ namespace Project_2._2_MVC.Models
         public video()
         {
             this.favoritevideo = new HashSet<favoritevideo>();
-            this.userreport = new HashSet<userreport>();
+            this.userreportVideo = new HashSet<userreportVideo>();
             this.videocategory = new HashSet<videocategory>();
             this.videocomments = new HashSet<videocomments>();
             this.videolike = new HashSet<videolike>();
@@ -25,14 +25,14 @@ namespace Project_2._2_MVC.Models
     
         public int id { get; set; }
         public string title { get; set; }
-        public Nullable<int> duration { get; set; }
-        public Nullable<int> views { get; set; }
+        public int duration { get; set; }
+        public int views { get; set; }
         public string thumbnail { get; set; }
         public string moreinfo { get; set; }
-        public Nullable<System.DateTime> datecreated { get; set; }
+        public System.DateTime datecreated { get; set; }
     
         public virtual ICollection<favoritevideo> favoritevideo { get; set; }
-        public virtual ICollection<userreport> userreport { get; set; }
+        public virtual ICollection<userreportVideo> userreportVideo { get; set; }
         public virtual ICollection<videocategory> videocategory { get; set; }
         public virtual ICollection<videocomments> videocomments { get; set; }
         public virtual ICollection<videolike> videolike { get; set; }

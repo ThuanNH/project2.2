@@ -10,10 +10,17 @@
 namespace Project_2._2_MVC.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class userreportSong
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id { get; set; }
+        public int accountid { get; set; }
+        public int relatedsongid { get; set; }
+        public string moreinfo { get; set; }
+        public System.DateTime Dateadded { get; set; }
+    
+        public virtual Account Account { get; set; }
+        public virtual song song { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace Project_2._2_MVC.Models
         public int id { get; set; }
         public int accountid { get; set; }
         public string contents { get; set; }
-        public Nullable<System.DateTime> datecreated { get; set; }
+        public System.DateTime datecreated { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual ICollection<playlistcomments> playlistcomments { get; set; }

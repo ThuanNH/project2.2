@@ -12,12 +12,13 @@ namespace Project_2._2_MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class bannedaccount
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id { get; set; }
+        public int accountid { get; set; }
+        public int bannedreasonid { get; set; }
+    
+        public virtual Account Account { get; set; }
+        public virtual bannedreason bannedreason { get; set; }
     }
 }

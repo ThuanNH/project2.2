@@ -27,8 +27,8 @@ namespace Project_2._2_MVC.Models
         public string title { get; set; }
         public string thumbnail { get; set; }
         public string moreinfo { get; set; }
-        public Nullable<int> views { get; set; }
-        public Nullable<System.DateTime> datecreated { get; set; }
+        public int views { get; set; }
+        public System.DateTime datecreated { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual ICollection<favoriteplaylist> favoriteplaylist { get; set; }

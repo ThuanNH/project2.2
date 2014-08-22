@@ -18,6 +18,6 @@ namespace Project_2._2_MVC.Models
         public string link { get; set; }
         public string images { get; set; }
         public bool Isactive { get; set; }
-        public Nullable<System.DateTime> Datecreate { get; set; }
+        public System.DateTime Datecreate { get; set; }
     }
 }

@@ -10,13 +10,17 @@
 namespace Project_2._2_MVC.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagrams_Result
+    public partial class userreportAccount
     {
-        public string Database { get; set; }
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public string Owner { get; set; }
-        public int OwnerID { get; set; }
+        public int id { get; set; }
+        public int accountid { get; set; }
+        public int relatedaccountid { get; set; }
+        public string moreinfo { get; set; }
+        public System.DateTime Dateadded { get; set; }
+    
+        public virtual Account Account { get; set; }
+        public virtual Account Account1 { get; set; }
     }
 }

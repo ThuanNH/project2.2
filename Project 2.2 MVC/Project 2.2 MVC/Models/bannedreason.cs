@@ -16,13 +16,13 @@ namespace Project_2._2_MVC.Models
     {
         public bannedreason()
         {
-            this.Account = new HashSet<Account>();
+            this.bannedaccount = new HashSet<bannedaccount>();
         }
     
         public int id { get; set; }
         public string title { get; set; }
         public string descriptions { get; set; }
     
-        public virtual ICollection<Account> Account { get; set; }
+        public virtual ICollection<bannedaccount> bannedaccount { get; set; }
     }
 }
