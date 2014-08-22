@@ -1,0 +1,33 @@
+﻿@model Project_2._2_MVC.Models.bannedreason
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/AdministratorArea/Views/Shared/LayoutPageAdmin.cshtml";
+}
+
+
+
+@Html.ValidationSummary("", new { @Style="color:red;"})
+@using (Html.BeginForm())
+{
+    <article class="module width_full">
+	    <header><span>Thêm Mới Lí Do Cấm</span></header>
+	    <div class="module_content">
+            <fieldset>
+                @Html.LabelFor(model => model.title)
+                @Html.EditorFor(model => model.title)
+                @Html.ValidationMessageFor(model => model.title, "(*)", new { @Style="color:red;"})
+            </fieldset>
+            <fieldset>
+                @Html.LabelFor(model => model.descriptions)
+                @Html.TextAreaFor(model => model.descriptions, 13, 0, null)
+            </fieldset>
+	    </div>
+	    <footer>
+            <div class="div_actionlink">
+                <input type="submit" value="Thêm" class="button" />
+                @Html.ActionLink("Hủy", "Index", "BannedReason", new { @title="Trở về danh sách lí do cấm"})
+            </div>
+	    </footer>
+    </article><!-- end of post new article -->
+}

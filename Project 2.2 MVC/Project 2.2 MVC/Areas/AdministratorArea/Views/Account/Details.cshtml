@@ -1,0 +1,92 @@
+﻿@model Project_2._2_MVC.Models.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Account</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Accountname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Accountname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.accounttype.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.accounttype.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fullname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fullname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dob)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dob)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.avatar)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.avatar)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.moreinfo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.moreinfo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.notes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.notes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Isactive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Isactive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lastloggedin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lastloggedin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.datecreated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.datecreated)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

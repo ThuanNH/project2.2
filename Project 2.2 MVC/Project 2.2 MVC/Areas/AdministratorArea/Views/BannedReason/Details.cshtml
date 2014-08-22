@@ -1,0 +1,27 @@
+﻿@model Project_2._2_MVC.Models.bannedreason
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdministratorArea/Views/Shared/LayoutPageAdmin.cshtml";
+}
+
+<article class="module width_full">
+	<header><span>Chi tiết</span></header>
+	<div class="module_content">
+        <fieldset>
+            @Html.LabelFor(model => model.title)
+            @Html.TextBoxFor(model => model.title, new { disabled = "disabled", @readonly = "readonly" })
+        </fieldset>
+        <fieldset>
+            @Html.LabelFor(model => model.descriptions)
+            @Html.TextAreaFor(model => model.descriptions, 13, 0, new { disabled = "disabled", @readonly = "readonly" })
+        </fieldset>
+	</div>
+	<footer>
+        <div class="div_actionlink">
+            @Html.ActionLink("Sửa", "Edit", "BannedReason", new { id=Model.id, @title="Sửa lí do này" }, null)
+            @Html.ActionLink("Xóa", "Delete", "BannedReason", new { id=Model.id, @title="Xóa lí do này"}, null)
+            @Html.ActionLink("Hủy", "Index", "BannedReason", new { @title="Trở về danh sách lí do cấm"})
+        </div>
+	</footer>
+</article><!-- end of post new article -->

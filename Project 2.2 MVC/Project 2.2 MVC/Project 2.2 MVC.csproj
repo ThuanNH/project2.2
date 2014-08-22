@@ -120,8 +120,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\AdministratorArea\Controllers\HomeController.cs" />
     <Compile Include="Areas\AdministratorArea\Controllers\AccountController.cs" />
+    <Compile Include="Areas\AdministratorArea\Controllers\BannedReasonController.cs" />
+    <Compile Include="Areas\AdministratorArea\Controllers\LoginController.cs" />
     <Compile Include="Controllers\Default1Controller.cs" />
     <Compile Include="Controllers\Default2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -250,8 +251,55 @@
     <Compile Include="util.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin\common.css" />
+    <Content Include="Content\Admin\dropdownlist.css" />
+    <Content Include="Content\Admin\images\accept.png" />
+    <Content Include="Content\Admin\images\breadcrumb_divider.png" />
+    <Content Include="Content\Admin\images\btn_submit.png" />
+    <Content Include="Content\Admin\images\btn_submit_2.png" />
+    <Content Include="Content\Admin\images\btn_view_site.png" />
+    <Content Include="Content\Admin\images\delete.png" />
+    <Content Include="Content\Admin\images\download.png" />
+    <Content Include="Content\Admin\images\edit.png" />
+    <Content Include="Content\Admin\images\header_bg.png" />
+    <Content Include="Content\Admin\images\header_shadow.png" />
+    <Content Include="Content\Admin\images\icn_add_user.png" />
+    <Content Include="Content\Admin\images\icn_alert_error.png" />
+    <Content Include="Content\Admin\images\icn_alert_info.png" />
+    <Content Include="Content\Admin\images\icn_alert_success.png" />
+    <Content Include="Content\Admin\images\icn_alert_warning.png" />
+    <Content Include="Content\Admin\images\icn_audio.png" />
+    <Content Include="Content\Admin\images\icn_categories.png" />
+    <Content Include="Content\Admin\images\icn_edit.png" />
+    <Content Include="Content\Admin\images\icn_edit_article.png" />
+    <Content Include="Content\Admin\images\icn_folder.png" />
+    <Content Include="Content\Admin\images\icn_jump_back.png" />
+    <Content Include="Content\Admin\images\icn_logout.png" />
+    <Content Include="Content\Admin\images\icn_new_article.png" />
+    <Content Include="Content\Admin\images\icn_photo.png" />
+    <Content Include="Content\Admin\images\icn_profile.png" />
+    <Content Include="Content\Admin\images\icn_search.png" />
+    <Content Include="Content\Admin\images\icn_security.png" />
+    <Content Include="Content\Admin\images\icn_settings.png" />
+    <Content Include="Content\Admin\images\icn_tags.png" />
+    <Content Include="Content\Admin\images\icn_trash.png" />
+    <Content Include="Content\Admin\images\icn_user.png" />
+    <Content Include="Content\Admin\images\icn_video.png" />
+    <Content Include="Content\Admin\images\icn_view_users.png" />
+    <Content Include="Content\Admin\images\module_footer_bg.png" />
+    <Content Include="Content\Admin\images\post_message.png" />
+    <Content Include="Content\Admin\images\secondary_bar.png" />
+    <Content Include="Content\Admin\images\secondary_bar_shadow.png" />
+    <Content Include="Content\Admin\images\sidebar.png" />
+    <Content Include="Content\Admin\images\sidebar_divider.png" />
+    <Content Include="Content\Admin\images\sidebar_shadow.png" />
+    <Content Include="Content\Admin\images\table_sorter_header.png" />
+    <Content Include="Content\Admin\images\trash.png" />
+    <Content Include="Content\Admin\images\up.png" />
+    <Content Include="Content\Admin\images\zoom.png" />
     <Content Include="Content\Admin\LoginStyle.css" />
     <Content Include="Content\Admin\StyleAdmin.css" />
+    <Content Include="Content\Admin\table.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -311,9 +359,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Areas\AdministratorArea\Views\Web.config" />
-    <Content Include="Areas\AdministratorArea\Views\Shared\LayoutPageAdmin.cshtml" />
-    <Content Include="Areas\AdministratorArea\Views\Home\Index.cshtml" />
-    <Content Include="Areas\AdministratorArea\Views\Account\Login.cshtml" />
     <EntityDeploy Include="Models\MusicModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MusicModel.Designer.cs</LastGenOutput>
@@ -331,6 +376,20 @@
       <DependentUpon>MusicModel.edmx</DependentUpon>
       <LastGenOutput>MusicModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\Admin\images\Thumbs.db" />
+    <Content Include="Areas\AdministratorArea\Views\Account\Create.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Account\Delete.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Account\Details.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Account\Edit.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Account\Index.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\BannedReason\Create.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\BannedReason\Delete.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\BannedReason\Details.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\BannedReason\Edit.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\BannedReason\Index.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Login\Login.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Shared\LayoutPageAdmin.cshtml" />
+    <Content Include="Areas\AdministratorArea\Views\Shared\Thumbs.db" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\Admin\hideshow.js" />
     <Content Include="Scripts\Admin\jquery-1.5.2.min.js" />

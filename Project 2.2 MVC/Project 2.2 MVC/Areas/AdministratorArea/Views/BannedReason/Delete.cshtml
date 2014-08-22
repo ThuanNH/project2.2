@@ -1,0 +1,29 @@
+﻿@model Project_2._2_MVC.Models.bannedreason
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/AdministratorArea/Views/Shared/LayoutPageAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <article class="module width_full">
+	    <header><span>Bạn có chắc chắn muốn xóa lí do này không?</span></header>
+	    <div class="module_content">
+            <fieldset>
+                @Html.LabelFor(model => model.title)
+                @Html.TextBoxFor(model => model.title, new { disabled = "disabled", @readonly = "readonly" })
+            </fieldset>
+            <fieldset>
+                @Html.LabelFor(model => model.descriptions)
+                @Html.TextAreaFor(model => model.descriptions, 13, 0, new { disabled = "disabled", @readonly = "readonly" })
+            </fieldset>
+	    </div>
+	    <footer>
+            <div class="div_actionlink">
+                <input type="submit" value="Xóa" class="button" />
+                @Html.ActionLink("Hủy", "Index", "BannedReason", new { @title="Trở về danh sách lí do cấm"})
+            </div>
+	    </footer>
+    </article><!-- end of post new article -->
+}

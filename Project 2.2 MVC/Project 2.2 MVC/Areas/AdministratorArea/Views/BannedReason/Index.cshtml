@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Project_2._2_MVC.Models.bannedreason>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdministratorArea/Views/Shared/LayoutPageAdmin.cshtml";
+    <link href="~/Content/Admin/table.css" rel="stylesheet" />
+}
+
+@helper buildLinks(int start, int end, string innerContent)
+{
+        for (int i = start; i <= end; i++)
+        {
+            <a  style="@(i == ViewBag.CurrentPage ? "background-color:#ffff89" : "")"  
+                href="@Url.Action("Index", "BannedReason", new { page = i, sortBy = ViewBag.sortBy, isAsc = ViewBag.isAsc.ToString().ToLower(), search = ViewBag.Search, pageSize=ViewBag.PageSize})">
+                @(innerContent ?? i.ToString())
+            </a>
+        }
+}
+
+
+@helper pageLinks()
+{
+    const int maxPages = 11;
+     
+    if (ViewBag.TotalPages <= maxPages)
+    {
+        @buildLinks(1, (int)ViewBag.TotalPages, null)
+        return;
+    }
+ 
+    int pagesAfter = ViewBag.TotalPages - ViewBag.CurrentPage; // Number of pages after current
+    int pagesBefore = ViewBag.CurrentPage - 1; // Number of pages before current
+ 
+    if (pagesAfter <= 4)
+    {
+        @buildLinks(1, 1, null) // Show 1st page
+ 
+        int pageSubset = ViewBag.TotalPages - maxPages - 1 > 1 ? ViewBag.TotalPages - maxPages - 1 : 2;
+        @buildLinks(pageSubset, pageSubset, "...") // Show page subset (...)
+ 
+        @buildLinks(ViewBag.TotalPages - maxPages + 3, ViewBag.TotalPages, null) // Show last pages
+ 
+        return; // Exit
+    }
+ 
+    if (pagesBefore <= 4)
+    {
+       @buildLinks(1, maxPages - 2, null) // Show 1st pages
+ 
+ 
+       int pageSubset = maxPages + 2 < ViewBag.TotalPages ? maxPages + 2 : ViewBag.TotalPages - 1;
+       @buildLinks(pageSubset, pageSubset, "...") // Show page subset (...)
+ 
+       @buildLinks(ViewBag.TotalPages, ViewBag.TotalPages, null) // Show last page
+ 
+        return; // Exit
+ 
+    }
+ 
+    if (pagesAfter > 4)
+    {
+        @buildLinks(1, 1, null) // Show 1st pages
+ 
+        int pageSubset1 = ViewBag.CurrentPage - 7 > 1 ? ViewBag.CurrentPage - 7 : 2;
+        int pageSubset2 = ViewBag.CurrentPage + 7 < ViewBag.TotalPages ? ViewBag.CurrentPage + 7 : ViewBag.TotalPages - 1;
+ 
+        @buildLinks(pageSubset1, pageSubset1, pageSubset1 == ViewBag.CurrentPage - 4 ? null : "...") // Show 1st page subset (...)
+ 
+        @buildLinks(ViewBag.CurrentPage - 3, ViewBag.CurrentPage + 3, null) // Show middle pages
+ 
+        // Show 2nd page subset (...)
+        // only show ... if page is contigous to the previous one.
+        @buildLinks(pageSubset2, pageSubset2, pageSubset2 ==  ViewBag.CurrentPage + 4 ? null : "...")
+        @buildLinks(ViewBag.TotalPages, ViewBag.TotalPages, null) // Show last page
+ 
+        return; // Exit 
+    }   
+}
+
+@helper sortLink(string name, int id)
+{
+    if (id == ViewBag.sortBy){
+        <a href="@Url.Action("Index", "BannedReason", new { 
+            sortBy = id, 
+            isAsc = (id == ViewBag.SortBy ? !ViewBag.isAsc : ViewBag.IsAsc).ToString().ToLower(), 
+            search = ViewBag.Search, 
+            pageSize=ViewBag.PageSize
+            })" style="color:black;text-decoration:underline;">@name</a>
+    }else{
+        <a href="@Url.Action("Index", "BannedReason", new { 
+            sortBy = id, 
+            isAsc = (id == ViewBag.SortBy ? !ViewBag.isAsc : ViewBag.IsAsc).ToString().ToLower(), 
+            search = ViewBag.Search, 
+            pageSize=ViewBag.PageSize
+            })" style="color:black;text-decoration:none;">@name</a>
+    }   
+}
+
+
+
+
+
+
+
+
+@{int stt = 0;}
+
+<div class="margin_left">
+    <form action="@Url.Action("Index", "BannedReason")" method="get">
+        @Html.ActionLink("Thêm mới", "Create", "BannedReason", new { @title = "Thêm mới do cấm", @class="actionlink margin_right"})
+        <span>Số dòng hiển thị : </span>
+        <input id="PageSize" name="PageSize" type="number" min="5" step="5" max="100" 
+            oninvalid="setCustomValidity('Chỉ được nhập số từ 5 đến 100')" 
+            onchange="try{setCustomValidity('')}catch(e){}"
+            class="textbox width_40 margin_right" value="@ViewBag.PageSize" />
+        <span>Tìm kiếm : </span>
+        <input id="search" name="search" type="text" value="@ViewBag.Search" class="textbox" style="width:250px;" />
+        <input type="submit" value="Thực hiện" class="button" />
+    </form> 
+</div>
+
+<article class="module width_full">
+    <header>
+        <span>Danh sách Lý Do Cấm</span>
+    </header>
+    <table class="tablesorter" cellspacing="0"> 
+        <thead>
+            <tr>
+                <th class="width_40">STT</th>
+                <th class="width_40">@sortLink("Mã", 1)</th>
+                <th class="width_300">@sortLink("Tiêu đề", 2)</th>
+                <th>@sortLink("Mô tả", 3)</th>
+                <th  class="width_200">Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>@{stt++;}@stt</td>
+            <td>@Html.DisplayFor(modelItem => item.id)</td>
+            <td>@Html.DisplayFor(modelItem => item.title)</td>
+            <td>@Html.DisplayFor(modelItem => item.descriptions)</td>
+            <td>
+                <a href="@Url.Action("Edit", "BannedReason", new { id=item.id})" title="Sửa lý do này">
+                    <img src="~/Content/Admin/images/edit.png" />
+                </a>
+                <a href="@Url.Action("Details", "BannedReason", new { id=item.id})" title="Xem chi tiết lý do này">
+                    <img src="~/Content/Admin/images/zoom.png" />
+                </a>
+                <a href="@Url.Action("Delete", "BannedReason", new { id=item.id})" title="Xóa lý do này">
+                    <img src="~/Content/Admin/images/delete.png" />
+                </a>
+            </td>
+        </tr>
+    }
+        </tbody>
+    </table>
+    <footer>
+        <div class="div_actionlink">
+            @pageLinks()
+        </div>
+	</footer>
+</article>

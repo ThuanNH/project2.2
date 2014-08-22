@@ -1,0 +1,83 @@
+.css3-metro-dropdown option,
+.css3-metro-dropdown:after,
+.css3-metro-dropdown::after,
+.css3-metro-dropdown select
+{
+
+    color: #fff;
+}
+
+.css3-metro-dropdown select,
+.css3-metro-dropdown:after,
+.css3-metro-dropdown::after
+{
+    display: block;
+    background: #D0D1D4 url(../images/btn_submit.png) repeat-x;
+}
+
+.css3-metro-dropdown select,
+.css3-metro-dropdown option
+{
+    padding: 8px;
+}
+
+.css3-metro-dropdown
+{
+    position: relative;
+    display: inline-block;
+    border: 0;
+}
+
+.css3-metro-dropdown::after
+{
+    content: "\25bc";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 32px;
+    font-size: 12px;
+    line-height: 34px;
+    text-align: center;
+     
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+}
+
+.css3-metro-dropdown select
+{
+   height: 24px;
+   line-height:24px;
+   border: 0;
+   vertical-align: middle;
+   font: normal 12px/14px "Segoe UI", Arial, Helvetica, Sans-serif;
+   outline: 0 none;
+}
+.css3-metro-dropdown option
+{
+    background: #fff;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
