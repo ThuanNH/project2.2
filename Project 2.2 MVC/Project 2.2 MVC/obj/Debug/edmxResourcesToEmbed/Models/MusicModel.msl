@@ -207,6 +207,8 @@
         <MappingFragment StoreEntitySet="song">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="fileSrc" ColumnName="fileSrc" />
+          <ScalarProperty Name="accountid" ColumnName="accountid" />
           <ScalarProperty Name="duration" ColumnName="duration" />
           <ScalarProperty Name="views" ColumnName="views" />
           <ScalarProperty Name="moreinfo" ColumnName="moreinfo" />
@@ -299,7 +301,9 @@
       <EntityTypeMapping TypeName="MusicWeb_DBModel.video">
         <MappingFragment StoreEntitySet="video">
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="accountid" ColumnName="accountid" />
           <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="fileSrc" ColumnName="fileSrc" />
           <ScalarProperty Name="duration" ColumnName="duration" />
           <ScalarProperty Name="views" ColumnName="views" />
           <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />

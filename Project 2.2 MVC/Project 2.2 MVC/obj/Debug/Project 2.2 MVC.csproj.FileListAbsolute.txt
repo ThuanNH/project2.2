@@ -206,3 +206,33 @@ D:\New folder (2)\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebP
 D:\New folder (2)\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.dll
 D:\New folder (2)\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.pdb
 D:\New folder (2)\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.csprojResolveAssemblyReference.cache
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\Project 2.2 MVC.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\Project 2.2 MVC.pdb
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\Antlr3.Runtime.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\EntityFramework.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\Microsoft.Web.Infrastructure.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\Newtonsoft.Json.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Net.Http.Formatting.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Http.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Http.WebHost.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Mvc.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Optimization.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Providers.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Razor.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.Deployment.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.Razor.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\WebGrease.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\EntityFramework.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\Newtonsoft.Json.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Net.Http.Formatting.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Http.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Http.WebHost.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Mvc.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Razor.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.Deployment.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.Razor.xml
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.dll
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.pdb
+D:\newPj\23-8-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.csprojResolveAssemblyReference.cache

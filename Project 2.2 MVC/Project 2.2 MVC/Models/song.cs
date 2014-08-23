@@ -28,6 +28,8 @@ namespace Project_2._2_MVC.Models
     
         public int id { get; set; }
         public string title { get; set; }
+        public string fileSrc { get; set; }
+        public int accountid { get; set; }
         public int duration { get; set; }
         public int views { get; set; }
         public string moreinfo { get; set; }
@@ -35,6 +37,7 @@ namespace Project_2._2_MVC.Models
         public string lyric { get; set; }
         public Nullable<System.DateTime> datecreated { get; set; }
     
+        public virtual Account Account { get; set; }
         public virtual ICollection<favoritesong> favoritesong { get; set; }
         public virtual ICollection<playlistitem> playlistitem { get; set; }
         public virtual ICollection<songcategory> songcategory { get; set; }

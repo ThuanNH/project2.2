@@ -236,6 +236,76 @@ namespace Project_2._2_MVC
             thumbnailBitmap.Dispose();
             image.Dispose();
         }
-    
+        //public static PersonLoginExtInfo CurrentPersonLoginInfo
+        //{
+        //    get
+        //    {
+        //        string errorMessage = string.Empty;
+        //        ModelManager db = new ModelManager();
+        //        PersonLoginExtInfo currentPersonLoginInfo = null;
+        //        if (HttpContext.Current.Session[Enumerations.SessionKeys.PersonLoginInfo.ToString()] != null)
+        //        {
+        //            currentPersonLoginInfo = (PersonLoginExtInfo)HttpContext.Current.Session[Enumerations.SessionKeys.PersonLoginInfo.ToString()];
+        //        }
+        //        else if (HttpContext.Current.User.Identity.IsAuthenticated)
+        //        {
+        //            currentPersonLoginInfo = db.GetPersonLoginExtInfo(HttpContext.Current.User.Identity.Name, out errorMessage);
+        //        }
+
+        //        if (!string.IsNullOrEmpty(errorMessage)) throw new Exception(errorMessage);
+
+        //        if (currentPersonLoginInfo != null &&
+        //            (currentPersonLoginInfo.VisibleServices == null ||
+        //            currentPersonLoginInfo.VisibleServices.Count == 0))
+        //        {
+        //            currentPersonLoginInfo.VisibleServices = new List<Service>();
+        //            currentPersonLoginInfo.VisibleRoles = new List<Role>();
+
+        //            currentPersonLoginInfo.AssignedRoles = db.GetRolesByPersonAsList(currentPersonLoginInfo.PersonId);
+        //            var foundAdminRole = currentPersonLoginInfo.AssignedRoles.FirstOrDefault(r => r.RoleID == (int)IMS.Web.Utilities.Enumerations.HardCodeRoles.SystemsAdministrator);
+
+        //            //If there's Administrator role --> get all data for admin role
+        //            if (foundAdminRole != null)
+        //            {
+        //                currentPersonLoginInfo.IsSystemAdministrator = true;
+        //                currentPersonLoginInfo.AssignedRoles = db.GetRolesAsList(true);
+        //                currentPersonLoginInfo.AssignedServices = db.GetServicesAsList(false, true);
+        //                currentPersonLoginInfo.AssignedActions = db.GetActionAsList();
+
+        //                currentPersonLoginInfo.VisibleServices.AddRange(currentPersonLoginInfo.AssignedServices);
+        //                currentPersonLoginInfo.VisibleRoles.AddRange(currentPersonLoginInfo.AssignedRoles);
+        //            }
+        //            else
+        //            {
+        //                currentPersonLoginInfo.IsSystemAdministrator = false;
+        //                currentPersonLoginInfo.AssignedServices = db.GetServicesByPersonAsList(currentPersonLoginInfo.PersonId);
+        //                currentPersonLoginInfo.AssignedActions = db.GetActionsByPerson(currentPersonLoginInfo.PersonId);
+
+        //                currentPersonLoginInfo.VisibleRoles = db.GetVisibleRoles(currentPersonLoginInfo.AssignedRoles);
+        //                currentPersonLoginInfo.VisibleServices = db.GetVisibleServices(currentPersonLoginInfo.AssignedRoles);
+
+        //                //Add assigned service to visible list
+        //                foreach (Service service in currentPersonLoginInfo.AssignedServices)
+        //                {
+        //                    if (currentPersonLoginInfo.VisibleServices.FirstOrDefault(s => s.ServiceID == service.ServiceID) == null)
+        //                        currentPersonLoginInfo.VisibleServices.Add(service);
+        //                }
+
+        //                //Add assigned role to visible role list
+        //                foreach (Role role in currentPersonLoginInfo.AssignedRoles)
+        //                {
+        //                    if (currentPersonLoginInfo.VisibleRoles.FirstOrDefault(r => r.RoleID == role.RoleID) == null)
+        //                        currentPersonLoginInfo.VisibleRoles.Add(role);
+        //                }
+        //            }
+        //            HttpContext.Current.Session[Enumerations.SessionKeys.PersonLoginInfo.ToString()] = currentPersonLoginInfo;
+        //        }
+        //        return currentPersonLoginInfo;
+        //    }
+        //    set
+        //    {
+        //        HttpContext.Current.Session[Enumerations.SessionKeys.PersonLoginInfo.ToString()] = value;
+        //    }
+        //}
     }
 }

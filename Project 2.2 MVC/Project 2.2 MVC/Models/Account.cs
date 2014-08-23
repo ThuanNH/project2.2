@@ -21,11 +21,13 @@ namespace Project_2._2_MVC.Models
             this.favoriteplaylist = new HashSet<favoriteplaylist>();
             this.favoritesong = new HashSet<favoritesong>();
             this.playlist = new HashSet<playlist>();
+            this.song = new HashSet<song>();
             this.songlike = new HashSet<songlike>();
             this.userreportAccount = new HashSet<userreportAccount>();
             this.userreportAccount1 = new HashSet<userreportAccount>();
             this.userreportSong = new HashSet<userreportSong>();
             this.userreportVideo = new HashSet<userreportVideo>();
+            this.video = new HashSet<video>();
             this.videolike = new HashSet<videolike>();
         }
     
@@ -49,11 +51,13 @@ namespace Project_2._2_MVC.Models
         public virtual ICollection<favoriteplaylist> favoriteplaylist { get; set; }
         public virtual ICollection<favoritesong> favoritesong { get; set; }
         public virtual ICollection<playlist> playlist { get; set; }
+        public virtual ICollection<song> song { get; set; }
         public virtual ICollection<songlike> songlike { get; set; }
         public virtual ICollection<userreportAccount> userreportAccount { get; set; }
         public virtual ICollection<userreportAccount> userreportAccount1 { get; set; }
         public virtual ICollection<userreportSong> userreportSong { get; set; }
         public virtual ICollection<userreportVideo> userreportVideo { get; set; }
+        public virtual ICollection<video> video { get; set; }
         public virtual ICollection<videolike> videolike { get; set; }
     }
 }

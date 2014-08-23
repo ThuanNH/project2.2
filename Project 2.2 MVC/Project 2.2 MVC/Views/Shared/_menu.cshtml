@@ -1,0 +1,118 @@
+﻿@using Project_2._2_MVC.Models;
+@using Project_2._2_MVC.ViewModels;
+@{
+    var db = new MusicWeb_DBEntities();
+    var menu = new menuViewModel();
+    menu.categories = db.category.ToList<category>();
+    menu.SongCategories = db.category.Where(p => p.categorytypeid == 2).ToList<category>();
+    menu.VideoCategories = db.category.Where(p => p.categorytypeid == 1).ToList<category>();
+    var slideImgs = db.slideshowitem.Where(p=>p.Isactive==true).ToList<slideshowitem>();     
+    
+    
+}
+<nav class="top-box menu-move-down menu-background-display">
+		
+		<section class="top-box-left circle-focus"  >
+			<a href="@Url.Action("Index","Home")">
+				<span class="banner-title">GiaiTriVip</span>
+				<br/>
+				<span class="banner-sub-title">Cùng chia sẽ cùng vui</span>
+			</a>
+		</section>
+		
+        <section class="top-box-center">
+
+			<ul class="menu">
+				
+				<li class="menu-item">
+					<a href="#bai-hat.html" title="Xem các Bài Hát" class="h5" >Bài Hát</a>   
+				
+					<ul class="sub-menu">
+@*						<li><a rel="follow" href="theloaibaihat.html" title="Mới &amp; HOT">
+                            Mới &amp; HOT</a></li>*@
+                        @foreach (var item in menu.SongCategories)
+                        {
+                            <li><a href="@Url.Action("Index", "TheLoaiBaiHat", new { id = item.id })" title="@item.name">
+                            @item.name</a></li>
+                        }
+                    </ul>
+
+				
+				</li>
+				<li class="menu-item">
+					<a href="#Album | Playlist.html" title="Xem các Album và Playlist" class="h5" >
+						Album | Playlist
+					</a>     
+					<ul class="sub-menu">
+@*						<li><a rel="follow" href="theloaibaihat.html" title="Mới &amp; HOT">
+                            Mới &amp; HOT</a></li>*@
+                        @foreach (var item in menu.SongCategories)
+                        {
+                            <li><a href="@Url.Action("Index", "TheLoaiAlbum", new { id = item.id })" title="@item.name">
+                            @item.name</a></li>
+                        }
+                    </ul>		
+				</li> 
+				<li class="menu-item">
+					<a href="#bai-hat.html" title="Xem các Bài Hát" class="h5" >Ca Sĩ</a>  
+                     
+					<ul class="sub-menu">
+@*						<li><a rel="follow" href="theloaibaihat.html" title="Mới &amp; HOT">
+                            Mới &amp; HOT</a></li>*@
+                        @foreach (var item in menu.SongCategories)
+                        {
+                            <li><a href="@Url.Action("Index", "TheloaiCaSi", new { id = item.id })" title="@item.name">
+                            @item.name</a></li>
+                        }
+                    </ul>
+
+				
+				</li>
+				<li class="menu-item">
+					<a href="#Video.html" title="Xem Video" class="h5" >
+						Video
+					</a>     
+					<ul class="sub-menu">
+@*						<li><a rel="follow" href="theloaibaihat.html" title="Mới &amp; HOT">
+                            Mới &amp; HOT</a></li>*@
+                        @foreach (var item in menu.VideoCategories)
+                        {
+                            <li><a href="@Url.Action("Index", "TheLoaiVideo", new { id = item.id })" title="@item.name">
+                            @item.name</a></li>
+                        }
+                    </ul>		
+				</li>
+			</ul>
+
+            <section class="sitemap-box">
+                <ul>
+					<li class="sitemap-item "><a href="masterpage.html" title="Home" class="h10-hover"></a></li>		
+					<li class="sitemap-item"><a href="theloaibaihat.html" title="Music" class="h10-hover">Music</a></li>								
+					<li class="sitemap-item"><a href="theloaibaihat.html" title="Category" class="h10-hover">Category</a></li>
+					<li class="sitemap-item"><a href="#phim-bo-hoat-hinh.html" title="Singer's Name" class="h10-hover">Singer's Nickname</a></li>
+					<li class="sitemap-item"><a href="#phim-bo-hong-kong.html" title="Album's Name" class="h10-hover">Album's Name</a></li>
+					<li class="sitemap-item"><span  title="Song's Name" class="h10-hover">Song's Name</span></li>
+						
+				</ul>
+                <section class="upload-button h9-hover" title="Chia sẽ bài hát và video của bạn">Upload</section>
+            </section>
+		
+            <section class="clear-both"></section>
+        </section>
+        <section class="top-box-right">
+            
+            <section class="registration-box">
+				<a href="#" class="h6-hover" title="Đăng Nhập">Đăng Nhập</a> hoặc <a href="#" class="h6-hover" title="Đăng Ký">Đăng Ký</a>
+			</section>
+			<section class="search-box" title="Tìm Kiếm">
+				<form action="asd">
+					<input class="search-text-field h9" placeholder="Tìm bài hát, video, ca sĩ ..." required/>
+					<input type="submit" value="" class="search-button" title="Tìm kiếm"/>
+				</form>
+			</section>
+            
+        </section>
+		
+        <section class="clear-both"></section>
+		<section class="menu-scroll-button single-button rotate-180-deg"></section>
+    </nav>

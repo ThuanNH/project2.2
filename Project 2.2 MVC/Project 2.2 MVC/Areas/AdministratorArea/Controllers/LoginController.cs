@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Project_2._2_MVC.Areas.AdministratorArea.Controllers
 {
@@ -25,6 +26,7 @@ namespace Project_2._2_MVC.Areas.AdministratorArea.Controllers
                 if (IsValid(_account.Accountname, _account.password, 1))
                 {
                     System.Web.Security.FormsAuthentication.SetAuthCookie(_account.Accountname, false);
+                    
                     return RedirectToAction("Index", "Home");
                 }
                 else

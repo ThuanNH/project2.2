@@ -113,6 +113,10 @@
       <End Role="category" EntitySet="category" />
       <End Role="singercategory" EntitySet="singercategory" />
     </AssociationSet>
+    <AssociationSet Name="FK_Song" Association="MusicWeb_DBModel.Store.FK_Song">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="song" EntitySet="song" />
+    </AssociationSet>
     <AssociationSet Name="FK_songcategory" Association="MusicWeb_DBModel.Store.FK_songcategory">
       <End Role="song" EntitySet="song" />
       <End Role="songcategory" EntitySet="songcategory" />
@@ -176,6 +180,10 @@
     <AssociationSet Name="FK_userreportvideo1" Association="MusicWeb_DBModel.Store.FK_userreportvideo1">
       <End Role="video" EntitySet="video" />
       <End Role="userreportVideo" EntitySet="userreportVideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_video" Association="MusicWeb_DBModel.Store.FK_video">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="video" EntitySet="video" />
     </AssociationSet>
     <AssociationSet Name="FK_videocategory" Association="MusicWeb_DBModel.Store.FK_videocategory">
       <End Role="category" EntitySet="category" />
@@ -396,6 +404,8 @@
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fileSrc" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="accountid" Type="int" Nullable="false" />
     <Property Name="duration" Type="int" Nullable="false" />
     <Property Name="views" Type="int" Nullable="false" />
     <Property Name="moreinfo" Type="nvarchar(max)" />
@@ -486,7 +496,9 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="accountid" Type="int" Nullable="false" />
     <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fileSrc" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="duration" Type="int" Nullable="false" />
     <Property Name="views" Type="int" Nullable="false" />
     <Property Name="thumbnail" Type="varchar" MaxLength="100" />
@@ -760,6 +772,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Song">
+    <End Role="Account" Type="MusicWeb_DBModel.Store.Account" Multiplicity="1" />
+    <End Role="song" Type="MusicWeb_DBModel.Store.song" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="song">
+        <PropertyRef Name="accountid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_songcategory">
     <End Role="song" Type="MusicWeb_DBModel.Store.song" Multiplicity="1" />
     <End Role="songcategory" Type="MusicWeb_DBModel.Store.songcategory" Multiplicity="*" />
@@ -949,6 +973,18 @@
       </Principal>
       <Dependent Role="userreportVideo">
         <PropertyRef Name="relatedvideoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_video">
+    <End Role="Account" Type="MusicWeb_DBModel.Store.Account" Multiplicity="1" />
+    <End Role="video" Type="MusicWeb_DBModel.Store.video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="video">
+        <PropertyRef Name="accountid" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
