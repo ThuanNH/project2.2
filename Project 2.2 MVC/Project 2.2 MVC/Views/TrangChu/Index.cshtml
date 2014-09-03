@@ -59,7 +59,7 @@
                                                     <a href="@Url.Action("addSongFavorite", "UserRepository", new { id = item.id })">
                                                         <section class="music-list-item-toolbox-playlist music-list-item-toolbox-item" title="Thêm bài hát này vào playlist của bạn"></section>
                                                     </a>
-                                                    <a href="@Project_2._2_MVC.util.getmusicRootPath(item.fileSrc)">
+                                                    <a href="@Project_2._2_MVC.util.getmusicRootPath(item.SongSource.FirstOrDefault().fileSrc)">
                                                         <section class="music-list-item-toolbox-download music-list-item-toolbox-item" title="Tải bài hát này về máy"></section>
                                                     </a>
                                                 </section>
@@ -331,7 +331,7 @@
 											    <a href="@Url.Action("Index", "Video", new { id = item.id })" class="video-list-item-title h10-hover" title="@item.title"> @item.title</a>
 											    <section class="video-list-item-author" title="Video này đã được username chia sẽ">
 												    <span class="h12">Đăng bởi :</span>
-												    <a href="@Html.Action("Index", "TrangCaNhan", new { id = item.accountid })" class="h11-hover" title="Video này đã được @item.Account.Accountname chia sẽ">@item.Account.Accountname </a>
+												    <a href="@Html.Action("Index", "TrangCaNhan", new { id = item.accountid })" class="h11-hover" title="Video này đã được @item.Account.Username chia sẽ">@item.Account.Username </a>
 											    </section>
 											    <section class="video-list-item-views h11 " title="Video này được xem @item.views lần">
 												    @item.views
@@ -940,7 +940,7 @@
 										    <a href="@Url.Action("Index", "Video", new { id = item.id })" class="video-list-item-title h10-hover" title="@item.title"> @item.title</a>
 										    <section class="video-list-item-author" title="Video này đã được username chia sẽ">
 											    <span class="h12">Đăng bởi :</span>
-											    <a href="#" class="h11-hover" title="Video này đã được @item.Account.Accountname chia sẽ"> @item.Account.Accountname </a>
+											    <a href="#" class="h11-hover" title="Video này đã được @item.Account.Username chia sẽ"> @item.Account.Username </a>
 										    </section>
 										    <section class="video-list-item-views h11 " title="Video này được xem @item.views lần">
 											     @item.views

@@ -17,6 +17,8 @@ namespace Project_2._2_MVC.Models
         public int id { get; set; }
         public int accountid { get; set; }
         public int bannedreasonid { get; set; }
+        public Nullable<int> bannedDays { get; set; }
+        public System.DateTime StartDate { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual bannedreason bannedreason { get; set; }

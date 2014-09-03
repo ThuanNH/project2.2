@@ -12,15 +12,16 @@ namespace Project_2._2_MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class userreportAccount
+    public partial class userreport
     {
         public int id { get; set; }
         public int accountid { get; set; }
-        public int relatedaccountid { get; set; }
+        public int objectID { get; set; }
+        public int reportTypeID { get; set; }
         public string moreinfo { get; set; }
         public System.DateTime Dateadded { get; set; }
     
         public virtual Account Account { get; set; }
-        public virtual Account Account1 { get; set; }
+        public virtual ReportType ReportType { get; set; }
     }
 }

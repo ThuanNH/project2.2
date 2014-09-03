@@ -23,24 +23,23 @@ namespace Project_2._2_MVC.Models
             this.playlist = new HashSet<playlist>();
             this.song = new HashSet<song>();
             this.songlike = new HashSet<songlike>();
-            this.userreportAccount = new HashSet<userreportAccount>();
-            this.userreportAccount1 = new HashSet<userreportAccount>();
-            this.userreportSong = new HashSet<userreportSong>();
-            this.userreportVideo = new HashSet<userreportVideo>();
+            this.userreport = new HashSet<userreport>();
             this.video = new HashSet<video>();
             this.videolike = new HashSet<videolike>();
         }
     
         public int id { get; set; }
-        public string Accountname { get; set; }
+        public string Username { get; set; }
         public string password { get; set; }
         public int accounttypeid { get; set; }
         public string fullname { get; set; }
+        public string email { get; set; }
         public Nullable<System.DateTime> dob { get; set; }
         public string avatar { get; set; }
         public string moreinfo { get; set; }
         public string notes { get; set; }
-        public bool Isactive { get; set; }
+        public bool IsActivated { get; set; }
+        public bool IsDisabled { get; set; }
         public System.DateTime lastloggedin { get; set; }
         public System.DateTime datecreated { get; set; }
     
@@ -53,10 +52,7 @@ namespace Project_2._2_MVC.Models
         public virtual ICollection<playlist> playlist { get; set; }
         public virtual ICollection<song> song { get; set; }
         public virtual ICollection<songlike> songlike { get; set; }
-        public virtual ICollection<userreportAccount> userreportAccount { get; set; }
-        public virtual ICollection<userreportAccount> userreportAccount1 { get; set; }
-        public virtual ICollection<userreportSong> userreportSong { get; set; }
-        public virtual ICollection<userreportVideo> userreportVideo { get; set; }
+        public virtual ICollection<userreport> userreport { get; set; }
         public virtual ICollection<video> video { get; set; }
         public virtual ICollection<videolike> videolike { get; set; }
     }

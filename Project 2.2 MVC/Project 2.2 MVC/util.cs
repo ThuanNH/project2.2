@@ -33,6 +33,7 @@ namespace Project_2._2_MVC
         /// <returns></returns>
         public static string getVideoImageRootPath(string imageFullname)
         {
+          
             return Path.Combine(constants.videoImageDir, imageFullname);
         }
 

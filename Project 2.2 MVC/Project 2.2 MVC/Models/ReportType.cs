@@ -12,18 +12,16 @@ namespace Project_2._2_MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class bannedreason
+    public partial class ReportType
     {
-        public bannedreason()
+        public ReportType()
         {
-            this.bannedaccount = new HashSet<bannedaccount>();
+            this.userreport = new HashSet<userreport>();
         }
     
         public int id { get; set; }
-        public string title { get; set; }
-        public string descriptions { get; set; }
-        public Nullable<int> bannedDays { get; set; }
+        public string Name { get; set; }
     
-        public virtual ICollection<bannedaccount> bannedaccount { get; set; }
+        public virtual ICollection<userreport> userreport { get; set; }
     }
 }

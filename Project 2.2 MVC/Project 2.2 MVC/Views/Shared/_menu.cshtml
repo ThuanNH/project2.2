@@ -6,7 +6,7 @@
     menu.categories = db.category.ToList<category>();
     menu.SongCategories = db.category.Where(p => p.categorytypeid == 2).ToList<category>();
     menu.VideoCategories = db.category.Where(p => p.categorytypeid == 1).ToList<category>();
-    var slideImgs = db.slideshowitem.Where(p=>p.Isactive==true).ToList<slideshowitem>();     
+    var slideImgs = db.slideshowitem.Where(p=>p.IsActivated==true).ToList<slideshowitem>();     
     
     
 }

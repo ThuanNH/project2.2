@@ -12,18 +12,21 @@ namespace Project_2._2_MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class bannedreason
+    public partial class menuItem
     {
-        public bannedreason()
+        public menuItem()
         {
-            this.bannedaccount = new HashSet<bannedaccount>();
+            this.menuItem1 = new HashSet<menuItem>();
         }
     
         public int id { get; set; }
-        public string title { get; set; }
-        public string descriptions { get; set; }
-        public Nullable<int> bannedDays { get; set; }
+        public int menuContainerID { get; set; }
+        public Nullable<int> menuParentID { get; set; }
+        public string Title { get; set; }
+        public string Link { get; set; }
     
-        public virtual ICollection<bannedaccount> bannedaccount { get; set; }
+        public virtual menuContainer menuContainer { get; set; }
+        public virtual ICollection<menuItem> menuItem1 { get; set; }
+        public virtual menuItem menuItem2 { get; set; }
     }
 }

@@ -15,9 +15,10 @@ namespace Project_2._2_MVC.Models
     public partial class slideshowitem
     {
         public int id { get; set; }
+        public string Title { get; set; }
         public string link { get; set; }
         public string images { get; set; }
-        public bool Isactive { get; set; }
+        public bool IsActivated { get; set; }
         public System.DateTime Datecreate { get; set; }
     }
 }

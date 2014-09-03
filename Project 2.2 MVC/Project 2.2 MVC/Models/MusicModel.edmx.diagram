@@ -4,39 +4,44 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d2d701d7f4f84ae4857bb23fa831de21" Name="Diagram1">
-        <EntityTypeShape EntityType="MusicWeb_DBModel.Account" Width="1.5" PointX="3" PointY="25.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.accounttype" Width="1.5" PointX="0.75" PointY="27.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.ads" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.bannedaccount" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.bannedreason" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.category" Width="1.5" PointX="8.25" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.categorytype" Width="1.5" PointX="6" PointY="17.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.comments" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.favoriteplaylist" Width="1.5" PointX="10.5" PointY="29.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.favoritesong" Width="1.5" PointX="10.5" PointY="32.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.favoritevideo" Width="1.5" PointX="7.5" PointY="38.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.musician" Width="1.5" PointX="5.25" PointY="53.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.playlist" Width="1.5" PointX="5.25" PointY="32.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.playlistcategory" Width="1.5" PointX="10.5" PointY="35.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.playlistcomments" Width="1.5" PointX="7.5" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.playlistitem" Width="1.5" PointX="10.5" PointY="38" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.singer" Width="1.5" PointX="11.25" PointY="47.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.singercategory" Width="1.5" PointX="16.5" PointY="32.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.slideshowitem" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.song" Width="1.5" PointX="5.25" PointY="36.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.songcategory" Width="1.5" PointX="10.5" PointY="41" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.songcomments" Width="1.5" PointX="7.5" PointY="30.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.songlike" Width="1.5" PointX="10.5" PointY="26.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.songmusician" Width="1.5" PointX="7.5" PointY="42" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.songsinger" Width="1.5" PointX="13.5" PointY="38" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.userreportAccount" Width="1.5" PointX="5.25" PointY="42.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.userreportSong" Width="1.5" PointX="13.5" PointY="32.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.userreportVideo" Width="1.5" PointX="13.5" PointY="41.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.video" Width="1.5" PointX="5.25" PointY="48.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.videocategory" Width="1.5" PointX="7.5" PointY="49.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.videocomments" Width="1.5" PointX="7.5" PointY="35.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicWeb_DBModel.videolike" Width="1.5" PointX="10.5" PointY="44.625" IsExpanded="true" />
+      <Diagram DiagramId="27bc0864013c4d3189f03c3e2db6270f" Name="Diagram1" ZoomLevel="108">
+        <EntityTypeShape EntityType="MusicWeb_DBModel.Account" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.accounttype" Width="1.5" PointX="0.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.ads" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.adsContainer" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.bannedaccount" Width="1.5" PointX="5.25" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.bannedreason" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.category" Width="1.5" PointX="8.25" PointY="51.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.categorytype" Width="1.5" PointX="6" PointY="51.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.comments" Width="1.5" PointX="5.25" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.favoriteplaylist" Width="1.5" PointX="10.5" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.favoritesong" Width="1.5" PointX="10.5" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.favoritevideo" Width="1.5" PointX="7.5" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.menuContainer" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.menuItem" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.musician" Width="1.5" PointX="8.25" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.playlist" Width="1.5" PointX="5.25" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.playlistcategory" Width="1.5" PointX="10.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.playlistcomments" Width="1.5" PointX="7.5" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.playlistitem" Width="1.5" PointX="10.5" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.ReportType" Width="1.5" PointX="6" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.singer" Width="1.5" PointX="5.25" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.singercategory" Width="1.5" PointX="10.5" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.slideshowitem" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.song" Width="1.5" PointX="5.25" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.songcategory" Width="1.5" PointX="7.5" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.songcomments" Width="1.5" PointX="7.5" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.songlike" Width="1.5" PointX="10.5" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.songmusician" Width="1.5" PointX="10.5" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.SongQuality" Width="1.5" PointX="8.25" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.songsinger" Width="1.5" PointX="7.5" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.SongSource" Width="1.5" PointX="10.5" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.userreport" Width="1.5" PointX="8.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.video" Width="1.5" PointX="5.25" PointY="46" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.videocategory" Width="1.5" PointX="7.5" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.videocomments" Width="1.5" PointX="7.5" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicWeb_DBModel.videolike" Width="1.5" PointX="13.5" PointY="35.625" IsExpanded="true" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_Account" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_bannedaccount1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_comments" ManuallyRouted="false" />
@@ -46,12 +51,10 @@
         <AssociationConnector Association="MusicWeb_DBModel.FK_playlist" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_Song" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_songlike1" ManuallyRouted="false" />
-        <AssociationConnector Association="MusicWeb_DBModel.FK_userreportaccount" ManuallyRouted="false" />
-        <AssociationConnector Association="MusicWeb_DBModel.FK_userreportaccount1" ManuallyRouted="false" />
-        <AssociationConnector Association="MusicWeb_DBModel.FK_userreportsong" ManuallyRouted="false" />
-        <AssociationConnector Association="MusicWeb_DBModel.FK_userreportvideo" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicWeb_DBModel.FK_userreport" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_video" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_videolike1" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicWeb_DBModel.FK__ads__AdsContaine__70DDC3D8" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_bannedaccount" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_category" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_playlistcategory" ManuallyRouted="false" />
@@ -64,11 +67,14 @@
         <AssociationConnector Association="MusicWeb_DBModel.FK_favoriteplaylist1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_favoritesong" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_favirotevideo1" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicWeb_DBModel.FK__menuItem__menuCo__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicWeb_DBModel.FK__menuItem__menuPa__1CF15040" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_songmusician" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_playlistcategory1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_playlistcomments" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_playlistitem1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_playlistitem" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicWeb_DBModel.FK_userreport1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_singercategory" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_songsinger1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_songcategory" ManuallyRouted="false" />
@@ -76,8 +82,8 @@
         <AssociationConnector Association="MusicWeb_DBModel.FK_songlike" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_songmusician1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_songsinger" ManuallyRouted="false" />
-        <AssociationConnector Association="MusicWeb_DBModel.FK_userreportsong1" ManuallyRouted="false" />
-        <AssociationConnector Association="MusicWeb_DBModel.FK_userreportvideo1" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicWeb_DBModel.FK_songsource" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicWeb_DBModel.FK_songsource1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_videocategory1" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_videocomments" ManuallyRouted="false" />
         <AssociationConnector Association="MusicWeb_DBModel.FK_videolike" ManuallyRouted="false" />

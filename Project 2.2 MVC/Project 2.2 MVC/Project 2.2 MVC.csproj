@@ -131,6 +131,7 @@
     <Compile Include="constants.cs" />
     <Compile Include="Controllers\TheLoaiBaiHatController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
+    <Compile Include="enumeration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,31 +144,49 @@
     <Compile Include="Models\ads.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\adsContainer.cs">
+      <DependentUpon>MusicModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\bannedaccount.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\bannedreason.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\category.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\categorytype.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\comments.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\favoriteplaylist.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\favoritesong.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\favoritevideo.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MusicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\menuContainer.cs">
+      <DependentUpon>MusicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\menuItem.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\musician.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MusicModel.Context.cs">
@@ -176,8 +195,8 @@
       <DependentUpon>MusicModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MusicModel.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MusicModel.Designer.cs">
@@ -186,63 +205,90 @@
       <DependentUpon>MusicModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\playlist.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\playlistcategory.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\playlistcomments.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\playlistitem.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MusicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReportType.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\singer.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\singercategory.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\slideshowitem.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\song.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\songcategory.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\songcomments.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\songlike.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\songmusician.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MusicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SongQuality.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\songsinger.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\userreportAccount.cs">
+    <Compile Include="Models\SongSource.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\userreportSong.cs">
+    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\userreportVideo.cs">
+    <Compile Include="Models\userreport.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\video.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\videocategory.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\videocomments.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\videolike.cs">
+      <SubType>Code</SubType>
       <DependentUpon>MusicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

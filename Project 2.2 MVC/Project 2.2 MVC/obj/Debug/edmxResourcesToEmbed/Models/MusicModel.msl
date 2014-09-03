@@ -5,15 +5,17 @@
       <EntityTypeMapping TypeName="MusicWeb_DBModel.Account">
         <MappingFragment StoreEntitySet="Account">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Accountname" ColumnName="Accountname" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="accounttypeid" ColumnName="accounttypeid" />
           <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="dob" ColumnName="dob" />
           <ScalarProperty Name="avatar" ColumnName="avatar" />
           <ScalarProperty Name="moreinfo" ColumnName="moreinfo" />
           <ScalarProperty Name="notes" ColumnName="notes" />
-          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+          <ScalarProperty Name="IsDisabled" ColumnName="IsDisabled" />
           <ScalarProperty Name="lastloggedin" ColumnName="lastloggedin" />
           <ScalarProperty Name="datecreated" ColumnName="datecreated" />
         </MappingFragment>
@@ -32,9 +34,24 @@
       <EntityTypeMapping TypeName="MusicWeb_DBModel.ads">
         <MappingFragment StoreEntitySet="ads">
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="AdsContainerID" ColumnName="AdsContainerID" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
           <ScalarProperty Name="images" ColumnName="images" />
-          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+          <ScalarProperty Name="Datecreate" ColumnName="Datecreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="adsContainer">
+      <EntityTypeMapping TypeName="MusicWeb_DBModel.adsContainer">
+        <MappingFragment StoreEntitySet="adsContainer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
           <ScalarProperty Name="Datecreate" ColumnName="Datecreate" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -45,6 +62,8 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="accountid" ColumnName="accountid" />
           <ScalarProperty Name="bannedreasonid" ColumnName="bannedreasonid" />
+          <ScalarProperty Name="bannedDays" ColumnName="bannedDays" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -54,6 +73,7 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
           <ScalarProperty Name="descriptions" ColumnName="descriptions" />
+          <ScalarProperty Name="bannedDays" ColumnName="bannedDays" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -114,6 +134,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="menuContainer">
+      <EntityTypeMapping TypeName="MusicWeb_DBModel.menuContainer">
+        <MappingFragment StoreEntitySet="menuContainer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menuItem">
+      <EntityTypeMapping TypeName="MusicWeb_DBModel.menuItem">
+        <MappingFragment StoreEntitySet="menuItem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menuContainerID" ColumnName="menuContainerID" />
+          <ScalarProperty Name="menuParentID" ColumnName="menuParentID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="musician">
       <EntityTypeMapping TypeName="MusicWeb_DBModel.musician">
         <MappingFragment StoreEntitySet="musician">
@@ -168,6 +208,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ReportType">
+      <EntityTypeMapping TypeName="MusicWeb_DBModel.ReportType">
+        <MappingFragment StoreEntitySet="ReportType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="singer">
       <EntityTypeMapping TypeName="MusicWeb_DBModel.singer">
         <MappingFragment StoreEntitySet="singer">
@@ -195,9 +243,10 @@
       <EntityTypeMapping TypeName="MusicWeb_DBModel.slideshowitem">
         <MappingFragment StoreEntitySet="slideshowitem">
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="link" ColumnName="link" />
           <ScalarProperty Name="images" ColumnName="images" />
-          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
           <ScalarProperty Name="Datecreate" ColumnName="Datecreate" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -207,10 +256,10 @@
         <MappingFragment StoreEntitySet="song">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
-          <ScalarProperty Name="fileSrc" ColumnName="fileSrc" />
           <ScalarProperty Name="accountid" ColumnName="accountid" />
           <ScalarProperty Name="duration" ColumnName="duration" />
           <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="moreSingers" ColumnName="moreSingers" />
           <ScalarProperty Name="moreinfo" ColumnName="moreinfo" />
           <ScalarProperty Name="lyricfile" ColumnName="lyricfile" />
           <ScalarProperty Name="lyric" ColumnName="lyric" />
@@ -255,6 +304,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SongQuality">
+      <EntityTypeMapping TypeName="MusicWeb_DBModel.SongQuality">
+        <MappingFragment StoreEntitySet="SongQuality">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="songsinger">
       <EntityTypeMapping TypeName="MusicWeb_DBModel.songsinger">
         <MappingFragment StoreEntitySet="songsinger">
@@ -264,34 +322,34 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="userreportAccount">
-      <EntityTypeMapping TypeName="MusicWeb_DBModel.userreportAccount">
-        <MappingFragment StoreEntitySet="userreportAccount">
+    <EntitySetMapping Name="SongSource">
+      <EntityTypeMapping TypeName="MusicWeb_DBModel.SongSource">
+        <MappingFragment StoreEntitySet="SongSource">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="accountid" ColumnName="accountid" />
-          <ScalarProperty Name="relatedaccountid" ColumnName="relatedaccountid" />
-          <ScalarProperty Name="moreinfo" ColumnName="moreinfo" />
-          <ScalarProperty Name="Dateadded" ColumnName="Dateadded" />
+          <ScalarProperty Name="SongID" ColumnName="SongID" />
+          <ScalarProperty Name="fileSrc" ColumnName="fileSrc" />
+          <ScalarProperty Name="SongQualityID" ColumnName="SongQualityID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="userreportSong">
-      <EntityTypeMapping TypeName="MusicWeb_DBModel.userreportSong">
-        <MappingFragment StoreEntitySet="userreportSong">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="accountid" ColumnName="accountid" />
-          <ScalarProperty Name="relatedsongid" ColumnName="relatedsongid" />
-          <ScalarProperty Name="moreinfo" ColumnName="moreinfo" />
-          <ScalarProperty Name="Dateadded" ColumnName="Dateadded" />
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MusicWeb_DBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="userreportVideo">
-      <EntityTypeMapping TypeName="MusicWeb_DBModel.userreportVideo">
-        <MappingFragment StoreEntitySet="userreportVideo">
+    <EntitySetMapping Name="userreport">
+      <EntityTypeMapping TypeName="MusicWeb_DBModel.userreport">
+        <MappingFragment StoreEntitySet="userreport">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="accountid" ColumnName="accountid" />
-          <ScalarProperty Name="relatedvideoid" ColumnName="relatedvideoid" />
+          <ScalarProperty Name="objectID" ColumnName="objectID" />
+          <ScalarProperty Name="reportTypeID" ColumnName="reportTypeID" />
           <ScalarProperty Name="moreinfo" ColumnName="moreinfo" />
           <ScalarProperty Name="Dateadded" ColumnName="Dateadded" />
         </MappingFragment>

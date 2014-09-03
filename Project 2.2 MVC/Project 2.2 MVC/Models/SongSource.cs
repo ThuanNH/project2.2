@@ -12,18 +12,14 @@ namespace Project_2._2_MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class bannedreason
+    public partial class SongSource
     {
-        public bannedreason()
-        {
-            this.bannedaccount = new HashSet<bannedaccount>();
-        }
-    
         public int id { get; set; }
-        public string title { get; set; }
-        public string descriptions { get; set; }
-        public Nullable<int> bannedDays { get; set; }
+        public int SongID { get; set; }
+        public string fileSrc { get; set; }
+        public int SongQualityID { get; set; }
     
-        public virtual ICollection<bannedaccount> bannedaccount { get; set; }
+        public virtual song song { get; set; }
+        public virtual SongQuality SongQuality { get; set; }
     }
 }

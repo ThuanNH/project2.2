@@ -12,18 +12,19 @@ namespace Project_2._2_MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class bannedreason
+    public partial class adsContainer
     {
-        public bannedreason()
+        public adsContainer()
         {
-            this.bannedaccount = new HashSet<bannedaccount>();
+            this.ads = new HashSet<ads>();
         }
     
         public int id { get; set; }
-        public string title { get; set; }
-        public string descriptions { get; set; }
-        public Nullable<int> bannedDays { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public bool IsActivated { get; set; }
+        public System.DateTime Datecreate { get; set; }
     
-        public virtual ICollection<bannedaccount> bannedaccount { get; set; }
+        public virtual ICollection<ads> ads { get; set; }
     }
 }

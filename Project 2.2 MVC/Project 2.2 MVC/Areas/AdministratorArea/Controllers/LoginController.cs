@@ -21,11 +21,12 @@ namespace Project_2._2_MVC.Areas.AdministratorArea.Controllers
         [HttpPost]
         public ActionResult Login(Account _account)
         {
+            
             if (ModelState.IsValid)
             {
-                if (IsValid(_account.Accountname, _account.password, 1))
+                if (IsValid(_account.Username, _account.password, 1))
                 {
-                    System.Web.Security.FormsAuthentication.SetAuthCookie(_account.Accountname, false);
+                    System.Web.Security.FormsAuthentication.SetAuthCookie(_account.Username, false);
                     
                     return RedirectToAction("Index", "Home");
                 }
@@ -39,7 +40,7 @@ namespace Project_2._2_MVC.Areas.AdministratorArea.Controllers
 
         public bool IsValid(string user_name, string pass_word, int account_type)
         {
-            var account = db.Account.Where(a => a.Accountname == user_name && a.password == pass_word && a.accounttypeid == account_type).SingleOrDefault();
+            var account = db.Account.Where(a => a.Username == user_name && a.password == pass_word && a.accounttypeid == account_type).SingleOrDefault();
             if (account != null)
                 return true;
             return false;

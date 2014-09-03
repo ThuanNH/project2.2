@@ -39,5 +39,9 @@ namespace Project_2._2_MVC
         //lyric init
         public static string lyricDir = "/data/lyric";    
 
+
+
+
+
     }
 }

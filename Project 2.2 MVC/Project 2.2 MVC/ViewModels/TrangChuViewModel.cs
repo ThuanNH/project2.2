@@ -22,7 +22,7 @@ namespace Project_2._2_MVC.ViewModels
             newVideos = db.video.OrderBy(p => p.datecreated).Take(12).ToList<video>();
             topVideos = db.video.OrderBy(p => p.views).Take(10).ToList<video>();
             newPlaylist = db.playlist.OrderBy(p => p.datecreated).Take(8).ToList<playlist>();
-            allAds = db.ads.Where(p => p.Isactive == true).ToList<ads>();
+            allAds = db.ads.Where(p => p.IsActivated == true).ToList<ads>();
         }
     }
 }

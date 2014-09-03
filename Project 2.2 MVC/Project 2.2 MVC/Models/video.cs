@@ -17,7 +17,6 @@ namespace Project_2._2_MVC.Models
         public video()
         {
             this.favoritevideo = new HashSet<favoritevideo>();
-            this.userreportVideo = new HashSet<userreportVideo>();
             this.videocategory = new HashSet<videocategory>();
             this.videocomments = new HashSet<videocomments>();
             this.videolike = new HashSet<videolike>();
@@ -35,7 +34,6 @@ namespace Project_2._2_MVC.Models
     
         public virtual Account Account { get; set; }
         public virtual ICollection<favoritevideo> favoritevideo { get; set; }
-        public virtual ICollection<userreportVideo> userreportVideo { get; set; }
         public virtual ICollection<videocategory> videocategory { get; set; }
         public virtual ICollection<videocomments> videocomments { get; set; }
         public virtual ICollection<videolike> videolike { get; set; }

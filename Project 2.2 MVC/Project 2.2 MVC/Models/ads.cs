@@ -15,9 +15,15 @@ namespace Project_2._2_MVC.Models
     public partial class ads
     {
         public int id { get; set; }
+        public string Title { get; set; }
         public string link { get; set; }
+        public int AdsContainerID { get; set; }
+        public Nullable<System.DateTime> BeginDate { get; set; }
+        public Nullable<System.DateTime> endDate { get; set; }
         public string images { get; set; }
-        public bool Isactive { get; set; }
-        public Nullable<System.DateTime> Datecreate { get; set; }
+        public bool IsActivated { get; set; }
+        public System.DateTime Datecreate { get; set; }
+    
+        public virtual adsContainer adsContainer { get; set; }
     }
 }
