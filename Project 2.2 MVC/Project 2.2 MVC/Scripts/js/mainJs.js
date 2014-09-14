@@ -1,15 +1,214 @@
 var menu_item_per_col = 6;
 var sub_menu_padding = 20;
 var menu_item_height = 30;
-var slide_show_time_delay = 5;
+
+$('document').ready(function () {
+
+    //main_menu_initial();
+    playingPlaylistInit();
+
+    $('.media-player').videoPlayer();
+
+    $(".post-comment").click(function (e) {
+        e.preventDefault();
+        var comment_input = $(this).closest(".comment-input");
+        var input = comment_input.find(".comment-item-content");
+      //  alert(input.val().replace("/\n/g", "<br/>"));
+        $(".comment-item-content").html(input.val().replace("/\n/g", "<br/>"));
+
+    });
+
+});
+
+function main_menu_initial() {
+    
+    $("li.menu-item").each(function () {
+
+        var max_width = 0;
+        var max_heignt = 0;
+        var children_counter = $(this).children('ul').children('li').size();
+
+        if (children_counter > 0) {
+
+            max_heignt += 10;
+        }
+
+        if (children_counter <= menu_item_per_col) {
+
+            max_heignt += (menu_item_height * children_counter);
+
+        } else if (Math.ceil((children_counter / menu_item_per_col)) == 2) {
+
+            max_heignt += (children_counter / 2) * menu_item_height;
+
+        } else {
+
+            max_heignt += (Math.ceil((children_counter / 3)) * menu_item_height);
+
+        }
 
 
+        $(this).mouseenter(function () {
+
+            $(this).children('ul').css('height', max_heignt + "px");
+            $(this).children('ul').css('padding-top', "10px");
+
+        }).mouseleave(function () {
+            $(this).children('ul').css('height', "0px");
+            $(this).children('ul').css('padding-top', "0px");
+        });
+
+
+        $(this).children('ul').children('li').each(function () {
+
+            var new_width = parseInt($(this).children('a').width());
+
+            if (new_width > max_width) {
+
+                max_width = new_width;
+            }
+
+        });
+
+        max_width += ((max_width * 30) / 100) + 20;
+
+        $(this).children('ul').children('li').width(max_width);
+
+        var col_counter = Math.ceil((children_counter / menu_item_per_col));
+
+        if (col_counter == 2) {
+
+            max_width *= 2;
+
+        } else if (col_counter >= 3) {
+
+            max_width *= 3;
+
+        }
+
+        $(this).children('ul').width(max_width);
+
+    });
+
+    $(document).scroll(function (e) {
+        var curr = $(document).scrollTop();
+
+        if (curr > 80) {
+            if ($('.menu-scroll-button').hasClass('rotate-180-deg')) {
+
+                $('.top-box').addClass('menu-move-up').removeClass('menu-move-down');
+
+                $('.menu-scroll-button').addClass('.rotate-180-deg').css('opacity', '1');
+
+            } else {
+                $('.top-box').addClass('menu-move-down').removeClass('menu-move-up');
+                $('.menu-scroll-button').remove('.rotate-180-deg').css('opacity', '1');
+            }
+            $('.top-box').removeClass('menu-background-display');
+        }
+        else {
+
+            $('.top-box').addClass('menu-move-down').removeClass('menu-move-up');
+            $('.menu-scroll-button').addClass('.rotate-180-deg').css('opacity', '0');
+            $('.top-box').addClass('menu-background-display');
+        }
+
+
+    });
+    $('.menu-scroll-button').click(function () {
+        if ($(this).css('opacity') != "0") {
+
+            if ($(this).hasClass('rotate-180-deg')) {
+                $('.top-box').addClass('menu-move-down').removeClass('menu-move-up');
+                $(this).removeClass('rotate-180-deg');
+
+            } else {
+                $('.top-box').addClass('menu-move-up').removeClass('menu-move-down');
+                $(this).addClass('rotate-180-deg');
+
+            }
+
+
+        }
+
+    });
+
+}
+
+
+function playingPlaylistInit() {
+
+    var playing_items = $(".horizontal-music-list .item .ranking-number");
+    var nextbt = $(".control-bar .control-wrapper .next");
+    var previousbt = $(".control-bar .control-wrapper .previous");
+
+    //first init
+    changeSongInPlaylist(0);
+
+    //on items selected
+    playing_items.each(function (index, obj) {
+        $(this).on("click", function () {
+
+            changeSongInPlaylist(index);
+
+        });
+
+
+    });
+    //on nextbt clicked
+    nextbt.on("click", function () {
+        playNextSong();
+    });
+    previousbt.on("click", function () {
+        playPrevSong();
+    });
+
+}
+
+
+function playNextSong() {
+    var order = 0;
+    $(".media-player .horizontal-music-list .item").each(function (index, obj) {
+        if ($(this).hasClass("playing")) {
+            order = index + 1;
+        }
+    });
+    if (order > $(".media-player .horizontal-music-list .item").size() - 1)
+        order = 0;
+    changeSongInPlaylist(order);
+}
+
+function playPrevSong() {
+    var order = 0;
+    $(".media-player .horizontal-music-list .item").each(function (index, obj) {
+        if ($(this).hasClass("playing")) {
+            order = index - 1;
+        }
+    });
+    if (order < 0)
+        order = $(".media-player .horizontal-music-list .item").size() - 1;
+    changeSongInPlaylist(order);
+}
+
+function changeSongInPlaylist(num) {
+
+    var mediaPlayer = $('.media-player');
+    var media = mediaPlayer.find("video")[0];
+    var item = $(".media-player .horizontal-music-list .item").eq(num);
+    var src = item.attr("src");
+    if (typeof src === "undefined" || src === false)
+        return;
+    $(".media-player .horizontal-music-list .item").removeClass("playing");
+    item.addClass("playing");
+    media.src = src;
+    media.load();
+    media.play();
+
+}
 
 (function ($) {
 
     $.fn.initCollapse = function () {
-
-
 
         var children = $(this).find(".collapsable[collParent]");
         var uncollapsable;
@@ -351,6 +550,7 @@ var slide_show_time_delay = 5;
             });
 
             $(media).on('loadedmetadata', function () {
+
                 videoLoading.css({ "display": "none" });
                 updateVolUI();
                 updateLoadingProgress();
@@ -364,317 +564,377 @@ var slide_show_time_delay = 5;
 
     }
 
+    $.fn.slideshow = function () {
+
+
+        var slideshow = this;
+        var slide_progress_bar = slideshow.find('.my-slide-progress-bar');
+        var slide_progress_val = slide_progress_bar.find('.my-slide-progress-value');
+        var slide_show_time_delay = 5;
+        var body = slideshow.find('.my-slide');
+        if (typeof body === "undefined" || body === false)
+            body = slideshow;
+        var next = slideshow.find('.slide-button-right');
+        var prev = slideshow.find('.slide-button-left');
+        
+
+        var slideshow_initial = function () {
+
+            generate_sub_items();
+
+            change_index();
+
+            var timer = setInterval(slide_progress_update, slide_show_time_delay);
+            var sub_imags = slideshow.find('.slide-sub-item-text');
+            body.mouseover(function () {
+
+                window.clearInterval(timer);
+            });
+            body.mouseleave(function () {
+                timer = setInterval(slide_progress_update, slide_show_time_delay);
+
+            });
+
+            prev.click(function () {
+                reset_slide_progress();
+                change_index(0);
+            });
+            next.click(function () {
+                reset_slide_progress();
+                change_index(1);
+            });
+            sub_imags.click(function () {
+                var index = $(this).attr('index');
+                change_index_to(index);
+
+            });
+        }
+
+        var generate_sub_items = function () {
+
+            slideshow.find(".my-slide-body .slide-item").each(function () {
+
+                var index = $(this).attr('index');
+                var image_src = $(this).attr('thumUrl');
+                var item = "<div class='slide-sub-item-text'  index='" + index + "'><div class='slide-sub-item-img' style='background-image:url(" + image_src + ")' ></div></div>";
+
+                slideshow.find('.my-slide-footer').append(item);
+
+            });
+
+        }
+        var reset_slide_progress = function () {
+            slide_progress_val.width(0);
+        }
+
+        function slide_progress_update() {
+
+            var slide_progress_max_val = $(slide_progress_bar).width();
+            var slide_progress_gap_val = slide_progress_max_val * 0.001;
+            var width = slide_progress_val.width();
+            width += slide_progress_gap_val;
+            //alert(slide_progress_gap_val +"-"+ slide_progress_val.attr("class"));
+
+            if (width < slide_progress_max_val)
+                slide_progress_val.width(width);
+            else {
+                slide_progress_val.width(0);
+                change_index(1);
+            }
+
+
+        }
+
+        function change_index(flag) {
+
+            var first_item = slideshow.find('.slide-item:first-of-type');
+            var last_item = slideshow.find('.slide-item:last-of-type');
+            var items = slideshow.find('.slide-item');
+            var sub_imags = slideshow.find('.slide-sub-item-text');
+
+            if (flag == 1)
+                first_item.appendTo($('.my-slide-body ul'));
+            else
+                last_item.prependTo($('.my-slide-body ul'));
+
+            items.removeClass('slide-item-active');
+            first_item.addClass('slide-item-active');
+            //alert(items.size());
+            var index = first_item.attr('index');
+            sub_imags.removeClass('slide-sub-item-text-activated');
+            /*var curr = $.grep(sub_imags, function (e) {
+                alert(e);
+            });*/
+
+            $('.slide-sub-item-text[index="' + index + '"]').addClass('slide-sub-item-text-activated');
+
+        }
+
+        function change_index_to(new_index) {
+
+
+            var start_flag = 0;
+            $('.slide-item').each(function () {
+                var cur_index = $(this).attr('index');
+                if (start_flag == 1) {
+                    $(this).appendTo($('.my-slide-body ul'));
+
+                } else if (cur_index == new_index) {
+                    $(this).prependTo($('.my-slide-body ul'));
+                    start_flag = 1;
+                }
+
+            });
+            reset_slide_progress();
+            change_index(0);
+
+        }
+
+        slideshow_initial();
+
+    }
+
+    $.fn.cusAjax = function (validateFun, successFun, errorFun, startFun, endFun) {
+
+        //ajax call default values
+        var method = "POST";
+        var postURL = "";
+        var dataType = "json";
+        var data = "";
+        var locatingURL = false;
+        var isValid = true;
+        var isFilePosting = false;
+        var isFirstLoad = true;
+        ////////////
+
+        //check if has cuctom validate function
+        if (validateFun != null) {
+            //return false to stop ajax
+            isValid = validateFun();
+
+        }
+
+        //check if it is valid to call ajax
+        if (isValid) {
+            
+            //set up ajax
+
+            //check if there is a form to get data
+            if ($(this).is("form")) {
+                if ($(this).find("[type='file']").size() > 0) {
+                    isFilePosting = true;
+                }
+                //set data as form data
+                data = $(this).serialize();
+            }
+
+
+                
+                //get method value 
+                var currMethod = $(this).attr("method");
+                if (typeof currMethod !== "undefined")
+                    //set method to call
+                    method = currMethod;
+
+                //get post url value
+                var currPostURL = $(this).attr("postURL");
+                if (typeof currPostURL !== "undefined")
+                    //set post method to use
+                    postURL = currPostURL;
+                //get locating url
+                var currLocatingURL = $(this).attr("locatingURL");
+                if (typeof currLocatingURL !== "undefined")
+                    //set locating url
+                    locatingURL = currLocatingURL;
+               
+
+                //////////////////////
+                var preventDefault = false;
+                //check if there is a function to run in the beginning
+                if (typeof startFun !== "undefined")
+                    preventDefault = startFun();
+                if (!preventDefault) {
+                    defaultStart();
+                }
+
+                if (isFilePosting) {
+
+                    var ifrm = '<iframe id="fakeAjax" name="fakeAjax" style="position: absolute; left: -999em; top: -999em;"></iframe>';
+                    $("body").append(ifrm);
+                    isFirstLoad = true;
+                    $("#fakeAjax").load(function () {
+                        IframeLoaded($(this));
+                    });
+                    $(this).attr("target", "fakeAjax");
+                    $(this).submit();
+                    ////////////////////////////////-----------------
+                    var preventDefault = false;
+                    //check if has custom success function
+                    if (typeof successFun !== "undefined")
+                        //return false to prevent default function from running
+                        preventDefault = successFun(response);
+                    //check if url need to be changed
+                    if (locatingURL != false) {
+                        var data = {
+                            html: document.getElementById("content").innerHTML,
+                            pageTitle: document.title
+                        }
+                        processAjaxChangeURL(data, locatingURL);
+                    }
+                    //check if there is a function to run after a call
+                    preventDefault = false;
+                    if ( endFun != null)
+                        preventDefault = endFun();
+                    if (!preventDefault)
+                        defaultEnd();
+                    ///////////////////////////--------------------------------------
+
+                } else {
+                    $.ajax({
+                        type: method,
+                        url: postURL,
+                        dataType: dataType,
+                        data: data,
+                        success: function (response) {
+
+                            //alert("ajax success");
+
+                            var preventDefault = false;
+                            //check if has custom success function
+                            if (successFun != null)
+                                //return false to prevent default function from running
+                                preventDefault = successFun(response);
+
+                            if (!preventDefault) {
+                                defaultSuccess(response);
+                            }
+                            //check if url need to be changed
+                            if (locatingURL != false) {
+                           //     alert(locatingURL);
+                                var data = {
+                                    html: $("html").html(),
+                                    pageTitle: document.title
+                                }
+                              //  alert(data);
+                                processAjaxChangeURL(data, locatingURL);
+                            }
+                            //check if there is a function to run after a call
+                            preventDefault = false;
+                            if ( endFun != null)
+                                preventDefault = endFun();
+                            if (!preventDefault)
+                                defaultEnd();
+                        },
+                        error: function (response) {
+                           // alert("ajax error");
+                            var preventDefault = false;
+                            //check if has custom error function
+                            if ( errorFun != null)
+                                //return false to prevent default function from running
+                                preventDefault = errorFun(response);
+                            if (!preventDefault) {
+                                defaultError(response);
+                            }
+                            //check if there is a function to run after a call
+                            preventDefault = false;
+                            if ( endFun != null)
+                                preventDefault = endFun();
+                            if (!preventDefault)
+                                defaultEnd();
+                        }
+                    });
+                }
+        }
+        //process a change of url without reloading the page
+        function processAjaxChangeURL(data, urlPath) {
+            //alert("processAjaxChangeURL");
+
+          //  alert(data.html);
+            history.pushState({ "html": data.html, "pageTitle": data.pageTitle }, "", urlPath);
+
+        }
+
+        //default function to be called on start
+        function defaultStart() {
+
+        }
+        //default function to be called on end
+        function defaultEnd() {
+
+        }
+
+        //default function to be called on success
+        function defaultSuccess(response) {
+   
+            document.title = response.pageTitle;
+            var data = response.content;
+            var objects = data;
+         //   alert(data.container);
+            $(data.container).html(data.content);
+        
+        }
+        //default function to be called on error
+        function defaultError(response) {
+
+        }
+
+        //process back and forward buttons
+        window.onpopstate = function (e) {
+            window.location.reload();
+            //alert("onpopupstate");
+
+            //if (e.state) {
+            //    $("html").html(e.state.html);
+            //    document.title = e.state.pageTitle;
+            //}
+            
+        }
+        function IframeLoaded(obj) {
+            //alert("loaded iframe");
+            //Check to see if this is the first load of the iFrame
+            if (isFirstLoad) {
+                isFirstLoad = false;
+          //      return;
+            }
+           
+            //var date = $(obj).contents();
+            //alert(date);
+            //$(obj).remove();
+
+        }
+    }
+
 })(jQuery);
 
 
 
-$('document').ready(function(){
 
-	main_menu_initial();
-	slideshow_initial();
-	playingPlaylistInit();
+function html_ajax(params, callback, urlData, pathname) {
 
-	
-	$('.media-player').videoPlayer();
-	
-	$(".post-comment").click(function(e){
-		e.preventDefault();
-		var comment_input = $(this).closest(".comment-input");
-		var input = comment_input.find(".comment-item-content");
-		alert(input.val().replace("/\n/g","<br/>"));
-		$(".comment-item-content").html(input.val().replace("/\n/g","<br/>"));
-	
-	});
-	
-});
+    
 
-function slideshow_initial(){
-	generate_sub_items();
-	
-	change_index();
-	
-	var timer = setInterval(slide_progress_update,slide_show_time_delay);
-	$('.my-slide').mouseover(function(){
+    //$.ajax({
+    //    type: "GET",
+    //    url: urlData,
+    //    dataType: "html",
+    //    success: function (response) {
+    //        if (typeof pathname !== "undefined") {
 
-		window.clearInterval(timer);
-	});
-	$('.my-slide').mouseleave(function(){
-		timer = setInterval(slide_progress_update,slide_show_time_delay);
-	
-	});
-	
-	$('.slide-button').click(function(){
-		
-		reset_slide_progress();
-		
-	});
-	$('.slide-button-left').click(function(){
-		
-		change_index(0);
-	});
-	$('.slide-button-right').click(function(){
-		
-		change_index(1);
-	});
-	$('.slide-sub-item-text').click(function(){
-		var index=$(this).attr('index');
-		change_index_to(index);
-		
-	});
-}
-function generate_sub_items(){
-	$('li.slide-item').each(function(){
-		var index = $(this).attr('index');
-		var image_src = $(this).attr('thumbUrl');
-		
-		 var item = "<div class='slide-sub-item-text'  index='"+index+"'><div class='slide-sub-item-img' style='background-image:url("+image_src+")' ></div></div>";
+    //            if (pathname != window.location) {
+    //                window.history.pushState("", '', pathname);
+    //            }
+    //        }
+    //        if (typeof callback === "function")
+    //            callback(response);
+    //        $(".loading-in-progress").css({ "display": "none" });
+    //        return response;
+    //    },
+    //    error: function (response) {
+    //        alert(error_ms);
+    //        console.log(error_ms + "\n Access_helper connect fail !\n" + response.responseText);
+    //        $(".loading-in-progress").css({ "display": "none" });
 
-		$('.my-slide-footer').append(item);
-	
-	});
-	
-}
-function reset_slide_progress(){
-	$('div.my-slide-progress-value').width(0);
-}
-function slide_progress_update(){
-	
-	var slide_progress_max_val=$('section.my-slide-progress-bar').width();
-	var slide_progress_gap_val = slide_progress_max_val*0.001;
-	var width = $('div.my-slide-progress-value').width();
-	width +=slide_progress_gap_val;
-	
-	if(width<slide_progress_max_val)
-		 $('div.my-slide-progress-value').width(width);
-	else{
-		 $('div.my-slide-progress-value').width(0);
-		change_index(1);
-	}
-	
-	
-}
-function change_index(flag){
-	if(flag==1)
-		$('.slide-item:first-of-type').appendTo($('.my-slide-body ul'));
-	else
-		$('.slide-item:last-of-type').prependTo($('.my-slide-body ul'));
-		
-	$('.slide-item').removeClass('slide-item-active');
-	$('.slide-item:first-of-type').addClass('slide-item-active');
-	var index = $('.slide-item:first-of-type').attr('index');	
-	$('.slide-sub-item-text').removeClass('slide-sub-item-text-activated');
-	$('.slide-sub-item-text[index="'+index+'"]').addClass('slide-sub-item-text-activated');
-
-	
-	
-}
-
-function change_index_to(new_index){
-
-	
-	var start_flag=0;
-	$('.slide-item').each(function(){
-		var cur_index = $(this).attr('index');
-		if(start_flag==1){
-			$(this).prependTo($('.my-slide-body ul'));
-			
-		}else if(cur_index == new_index){
-			$(this).appendTo($('.my-slide-body ul'));
-			start_flag = 1;
-		}
-		
-	});
-	reset_slide_progress();
-	change_index(0);
-	
-}
-function main_menu_initial(){
-	
-	$("li.menu-item").each(function(){
-		
-		var max_width = 0;
-		var max_heignt = 0;
-		var children_counter = $(this).children('ul').children('li').size();
-	
-		if(children_counter > 0 ){
-			
-			max_heignt += 10;
-		}
-		
-		if(children_counter <= menu_item_per_col){
-			
-			max_heignt += (menu_item_height * children_counter);
-		
-		} else if(Math.ceil((children_counter/menu_item_per_col))==2){
-			
-			max_heignt += (children_counter/2) * menu_item_height;
-			
-		} else {
-			
-			max_heignt += (Math.ceil((children_counter/3)) * menu_item_height);
-			
-		}
-		
-		
-		$(this).mouseenter(function(){
-		
-			$(this).children('ul').css('height',max_heignt+"px");
-			$(this).children('ul').css('padding-top',"10px");
-			
-		}).mouseleave(function(){
-			$(this).children('ul').css('height',"0px");
-			$(this).children('ul').css('padding-top',"0px");
-		});
-		
-		
-		$(this).children('ul').children('li').each(function(){
-			
-			var new_width = parseInt($(this).children('a').width());
-		
-			if(new_width>max_width){
-				
-				max_width = new_width;
-			}
-			
-		});
-	
-		max_width +=((max_width*30)/100)+20;
-		
-		$(this).children('ul').children('li').width(max_width);
-		
-		var col_counter = Math.ceil((children_counter/menu_item_per_col));
-
-		if(col_counter == 2){
-		
-				max_width*=2;
-			
-		} else if(col_counter>=3){
-			
-				max_width*=3;
-				
-		}
-	
-		$(this).children('ul').width(max_width);
-		
-	});
-	
-	$(document).scroll(function(e) {
-			var curr = $(document).scrollTop();
-			
-			if(curr > 80){
-				if($('.menu-scroll-button').hasClass('rotate-180-deg')){
-					
-					$('.top-box').addClass('menu-move-up').removeClass('menu-move-down');
-					
-					$('.menu-scroll-button').addClass('.rotate-180-deg').css('opacity','1');
-					
-				}else{
-					$('.top-box').addClass('menu-move-down').removeClass('menu-move-up');
-					$('.menu-scroll-button').remove('.rotate-180-deg').css('opacity','1');
-				}
-				$('.top-box').removeClass('menu-background-display');
-			}
-			else{
-				
-				$('.top-box').addClass('menu-move-down').removeClass('menu-move-up');
-				$('.menu-scroll-button').addClass('.rotate-180-deg').css('opacity','0');
-				$('.top-box').addClass('menu-background-display');
-			}
-			
-			
-		});
-	$('.menu-scroll-button').click(function(){
-			if($(this).css('opacity') != "0"){
-				
-				if($(this).hasClass('rotate-180-deg')){
-					$('.top-box').addClass('menu-move-down').removeClass('menu-move-up');
-					$(this).removeClass('rotate-180-deg');
-					
-				}else{
-					$('.top-box').addClass('menu-move-up').removeClass('menu-move-down');
-					$(this).addClass('rotate-180-deg');
-					
-				}
-					
-				
-			}
-				
-		});
-	
-}
-function playingPlaylistInit() {
-
-    var playing_items = $(".horizontal-music-list .item .ranking-number");
-    var nextbt = $(".control-bar .control-wrapper .next");
-    var previousbt = $(".control-bar .control-wrapper .previous");
-
-    //first init
-    changeSongInPlaylist(0);
-
-    //on items selected
-    playing_items.each(function (index, obj) {
-        $(this).on("click", function () {
-       
-            changeSongInPlaylist(index);
-
-        });
-
-
-    });
-    //on nextbt clicked
-    nextbt.on("click", function () {
-        playNextSong();
-    });
-    previousbt.on("click", function () {
-        playPrevSong();
-    });
+    //    }
+    //});
 
 }
-
-
-function playNextSong() {
-    var order = 0;
-    $(".horizontal-music-list .item").each(function (index, obj) {
-        if ($(this).hasClass("playing")) {
-            order = index + 1;
-        }
-    });
-    if (order > $(".horizontal-music-list .item").size() - 1)
-        order = 0;
-    changeSongInPlaylist(order);
-}
-
-function playPrevSong() {
-    var order = 0;
-    $(".horizontal-music-list .item").each(function (index, obj) {
-        if ($(this).hasClass("playing")) {
-            order = index - 1;
-        }
-    });
-    if (order < 0)
-        order = $(".horizontal-music-list .item").size() - 1;
-    changeSongInPlaylist(order);
-}
-
-function changeSongInPlaylist(num) {
-
-    var mediaPlayer = $('.media-player');
-
-  alert(num);
-    var media = mediaPlayer.find("video")[0];
-    var item = $(".horizontal-music-list .item").eq(num);
-  
-    var src = item.attr("src");
-    if (typeof src === "undefined" || src === false)
-        return;
-    $(".horizontal-music-list .item").removeClass("playing");
-    item.addClass("playing");
-    media.src = src;
-    media.load();
-    media.play();
-
-}
-
-
-
-

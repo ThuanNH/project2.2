@@ -17,7 +17,7 @@
                 @foreach (var item in slideitems)
                 {
                     var index = slideitems.IndexOf(item);
-					<li thumUrl="@util.getslideshowThumbRootPath(item.images)" class="slide-item slide-item-deactive" index="@index+1"><a href="@item.link" ><img src="@util.getslideshowImageRootPath(item.images)" class="slide-item-image"/></a></li>
+					<li thumUrl="@util.changeUrl(util.getslideshowThumbRootPath(item.images))" class="slide-item slide-item-deactive" index="@(index+1)"><a href="@item.link" ><img src="@util.getslideshowImageRootPath(item.images)" class="slide-item-image"/></a></li>
                 }
 
 					@*<li class="slide-item slide-item-deactive" index="2"><a href="#" ><img src="images/slideshow/slide2.jpg" class="slide-item-image" /></a></li>
@@ -41,8 +41,12 @@
 			<section class="slide-button slide-button-right rotate-180-deg"></section>
 		</section>
 	</section>
-<script>
+<script src="~/Scripts/js/mainJs.js"></script>
+<script type="text/javascript">
     $(document).ready(function () {
+
+        $(".slideshow-box").slideshow();
+
 
     });
 </script>

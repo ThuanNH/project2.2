@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<div  id="login-form" style="margin-top:100px">
+    <div class="login-form">
+	<span class="h2" style="font-size:2.5em"> Đăng Nhập </span>
+	@using(Html.BeginForm("Login", "Login", FormMethod.Post, new { @id="frmLogin",postURL=@Url.Action("Login","Login")}))
+    {
+
+		<input name="username" id="username" class="input" placeholder="Nhập Tên Đăng Nhập .." required/>
+		<input type="password" name="pass" id="pass" class="input" placeholder="Nhập mật khẩu .." required/>
+					<div class="clear-both" ></div>@*
+
+		<input type="checkbox" name="remember" id="remember"  /><span>Nhớ tài khoản ? </span>
+						*@<div class="clear-both" ></div>
+
+		<input class="loginbt" type="submit" value="Đăng nhập" />
+					<div class="clear-both" ></div>
+
+	}
+
+	</div>
+
+</div> 
+<script src="~/Scripts/js/mainJs.js"></script>
+<script type="text/javascript">
+
+    $("#frmLogin").submit(function (e) {
+        e.preventDefault();
+        $(this).cusAjax(function () {
+           return true;
+
+        }, function (response) {
+
+            var data = response.content;
+            if (data.type == "error")
+                alert(data.content);
+            else {
+                window.location = "/trang-chia-se-am-nhac-truc-tuyen";
+            }
+
+        });
+    });
+
+</script>

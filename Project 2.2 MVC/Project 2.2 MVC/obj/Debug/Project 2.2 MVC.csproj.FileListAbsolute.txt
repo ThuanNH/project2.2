@@ -263,6 +263,6 @@ D:\newPj\2-9-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.Razo
 D:\newPj\2-9-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.xml
 D:\newPj\2-9-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.Deployment.xml
 D:\newPj\2-9-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\bin\System.Web.WebPages.Razor.xml
-D:\newPj\2-9-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.csprojResolveAssemblyReference.cache
 D:\newPj\2-9-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.dll
 D:\newPj\2-9-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.pdb
+D:\newPj\2-9-2014\project2.2\Project 2.2 MVC\Project 2.2 MVC\obj\Debug\Project 2.2 MVC.csprojResolveAssemblyReference.cache

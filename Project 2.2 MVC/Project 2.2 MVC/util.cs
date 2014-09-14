@@ -37,6 +37,8 @@ namespace Project_2._2_MVC
             return Path.Combine(constants.videoImageDir, imageFullname);
         }
 
+
+
         /// 
         /// 
         /// 
@@ -236,6 +238,22 @@ namespace Project_2._2_MVC
             thumbnailGraph.Dispose();
             thumbnailBitmap.Dispose();
             image.Dispose();
+        }
+
+        public static string changeUrl(string url) {
+            string newurl = "";
+            for (int i = 0;i< url.Length;i++)
+            {
+                if (url[i] == '\\' || url[i].CompareTo('\\') == 0)
+                {
+                    newurl += '/';
+                }
+                else {
+                    newurl += url[i];
+                }
+            }
+            return newurl;
+        
         }
         //public static PersonLoginExtInfo CurrentPersonLoginInfo
         //{

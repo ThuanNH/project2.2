@@ -1,0 +1,33 @@
+﻿@{ 
+    Project_2._2_MVC.ViewModels.UserProfile user; 
+}
+@if (Session[Project_2._2_MVC.constants.SessLoggedInUser] != null)
+{
+    user = Session[Project_2._2_MVC.constants.SessLoggedInUser] as Project_2._2_MVC.ViewModels.UserProfile;
+    
+}else{
+    <script src="~/Scripts/js/jquery.bpopup.min.js"></script>
+    <section class="registration-box">
+	    <a href="/dang-nhap"  class="h6-hover" title="Đăng Nhập" id="loginbt">Đăng Nhập </a> hoặc <a href="/dang-ky" class="h6-hover" title="Đăng Ký">Đăng Ký</a>
+
+    </section>
+    <script src="~/Scripts/js/mainJs.js"></script>
+    <script type="text/ecmascript">
+      
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

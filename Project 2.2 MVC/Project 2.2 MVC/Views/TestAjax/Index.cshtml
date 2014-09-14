@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @id = "frmLogin",@locatingURL="/page", @postURL = Url.Action("Login", "Login") }))
+{
+           
+	<input name="username" id="username" class="input" placeholder="Nhập Tên Đăng Nhập .." />
+	<input type="password" name="pass" id="pass" class="input" placeholder="Nhập mật khẩu .." />
+				<div class="clear-both" ></div>
+
+	<input type="checkbox" name="remember" id="remember"  /><Span>Nhớ tài khoản ? </Span>
+                                                         
+                                                         <div class="clear-both" ></div>
+
+	<input class="loginbt" type="submit" value="Đăng nhập" />
+				<div class="clear-both" ></div>
+
+}
+<div style="width:100%;border:1px solid black" id="ajCon">
+    
+</div>
+
+<a href="~/Views/TestAjax/Index" locatingURL="google.com" ajaxify postURL="@Url.Action("Index", "Home", new { @id = "1" })">test ajax</a>
+
+<script src="~/Scripts/js/mainJs.js"></script>
+<script type="text/javascript">
+
+    $("#frmLogin").submit(function (e) {
+        e.preventDefault();
+        $(this).cusAjax();
+    });
+    $("[ajaxify]").click(function (e) {
+        e.preventDefault();
+        alert("ajaxify call");
+        $(this).cusAjax();
+        alert("ajxify completed");
+    });
+    alert("inline script find");
+</script>

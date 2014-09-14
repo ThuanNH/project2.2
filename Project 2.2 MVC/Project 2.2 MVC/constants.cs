@@ -40,6 +40,9 @@ namespace Project_2._2_MVC
         public static string lyricDir = "/data/lyric";    
 
 
+        //authenticate user store
+        public static string SessLoggedInUser = "UserProfile";
+
 
 
 
